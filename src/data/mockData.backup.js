@@ -1,0 +1,210 @@
+export const provinces = [
+    {
+        id: 'ha-noi',
+        name: 'Hà Nội',
+        activeProjects: 5,
+        title: 'Thủ đô Hà Nội',
+        description: 'Thị trường NOXH sôi động nhất miền Bắc với nhiều dự án tại các quận huyện ngoại thành.',
+        marketInfo: 'Hà Nội đang tập trung phát triển NOXH tại các khu vực Đông Anh, Gia Lâm, Nam Từ Liêm...',
+    },
+    {
+        id: 'bac-ninh',
+        name: 'Bắc Ninh',
+        activeProjects: 3,
+        title: 'Tỉnh Bắc Ninh',
+        description: 'Thủ phủ công nghiệp với nhu cầu nhà ở cho công nhân rất lớn.',
+        marketInfo: 'Bắc Ninh đẩy mạnh NOXH gần các KCN Yên Phong, Quế Võ...',
+    },
+    {
+        id: 'bac-giang',
+        name: 'Bắc Giang',
+        activeProjects: 2,
+        title: 'Tỉnh Bắc Giang',
+        description: 'Điểm sáng mới về thu hút FDI và phát triển NOXH.',
+        marketInfo: 'Tập trung phát triển nhà ở công nhân tại Việt Yên, Yên Dũng.',
+    },
+    {
+        id: 'quang-ninh',
+        name: 'Quảng Ninh',
+        activeProjects: 4,
+        title: 'Tỉnh Quảng Ninh',
+        description: 'Phát triển NOXH gắn liền với đô thị hóa ven biển.',
+        marketInfo: 'Các dự án tập trung tại Hạ Long, Cẩm Phả.',
+    },
+    {
+        id: 'hung-yen',
+        name: 'Hưng Yên',
+        activeProjects: 2,
+        title: 'Tỉnh Hưng Yên',
+        description: 'Vị trí giáp ranh Hà Nội, thuận tiện giao thông.',
+        marketInfo: 'Phát triển NOXH tại Văn Giang, Mỹ Hào.',
+    },
+    {
+        id: 'hai-duong',
+        name: 'Hải Dương',
+        activeProjects: 1,
+        title: 'Tỉnh Hải Dương',
+        description: 'Nhu cầu NOXH tăng cao tại các khu vực đô thị.',
+        marketInfo: 'Dự án tập trung tại TP Hải Dương và các KCN.',
+    },
+];
+
+export const projects = [
+    {
+        id: 1,
+        name: "NOXH NHS Trung Văn",
+        slug: "noxh-nhs-trung-van-ha-noi",
+        province: "ha-noi",
+        location: "Đường Tố Hữu, Q. Nam Từ Liêm, Hà Nội",
+        price: "19.5 triệu/m2",
+        area: "45-75m²",
+        status: "open",
+        statusLabel: "Đang nhận hồ sơ",
+        isVisible: true,
+        image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&fm=webp&q=75",
+        projectImages: [
+            "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&fm=webp&q=80"
+        ],
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6419!2d105.7789!3d21.0031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAwJzExLjIiTiAxMDXCsDQ2JzQ0LjAiRQ!5e0!3m2!1svi!2s!4v1234567890",
+        investor: "Công ty Cổ phần Đầu tư Xây dựng NHS",
+        scale: "3 tòa chung cư 32 tầng",
+        designUnit: "Công ty CP Kiến trúc Lập Phương",
+        constructionUnit: "Vinaconex",
+        legal: "Sổ hồng lâu dài",
+        handover: "Quý IV/2025",
+        description: "Dự án NOXH NHS Trung Văn tọa lạc tại vị trí đắc địa trên mặt đường Tố Hữu, kết nối thuận tiện với trung tâm thành phố. Dự án được thiết kế hiện đại, đầy đủ tiện ích phục vụ nhu cầu sinh hoạt của cư dân.",
+        amenities: ["Trung tâm thương mại", "Nhà trẻ", "Khu vui chơi trẻ em", "Phòng sinh hoạt cộng đồng", "Hầm để xe rộng rãi"],
+        locationAnalysis: {
+            east: "Giáp khu đất đấu giá phường Trung Văn",
+            west: "Giáp đường Tố Hữu",
+            south: "Giáp khu nhà ở Ecolife Capitol",
+            north: "Giáp khu dân cư hiện hữu",
+            connection: "Cách BigC Thăng Long 2km, gần trường Amsterdam, BV Y học Cổ truyền..."
+        }
+    },
+    {
+        id: 2,
+        name: "NOXH Rice City Tố Hữu",
+        slug: "noxh-rice-city-to-huu-ha-noi",
+        province: "ha-noi",
+        location: "Q. Nam Từ Liêm, Hà Nội",
+        price: "19.2 triệu/m2",
+        area: "50-80m²",
+        status: "coming_soon",
+        statusLabel: "Sắp mở bán",
+        isVisible: true,
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&fm=webp&q=75",
+        projectImages: [
+            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&fm=webp&q=80"
+        ],
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5!2d105.778!3d21.004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAwJzE0LjQiTiAxMDXCsDQ2JzQwLjgiRQ!5e0!3m2!1svi!2s!4v1234567891",
+        investor: "Công ty BIC Việt Nam",
+        scale: "2 tòa 25 tầng",
+        designUnit: "BIC Design",
+        constructionUnit: "BIC Construction",
+        legal: "Sổ hồng lâu dài",
+        handover: "Quý II/2026",
+        description: "Rice City Tố Hữu là dự án tiếp theo trong chuỗi thương hiệu Rice City của BIC Việt Nam, hứa hẹn mang đến không gian sống chất lượng với giá cả hợp lý cho người dân Thủ đô.",
+        amenities: ["Siêu thị", "Gym & Spa", "Công viên nội khu", "Bể bơi"],
+        locationAnalysis: {
+            east: "Giáp đường quy hoạch",
+            west: "Giáp khu dân cư",
+            south: "Giáp đường Tố Hữu",
+            north: "Giáp hồ điều hòa",
+            connection: "Gần tuyến BRT, đường Lê Văn Lương kéo dài..."
+        }
+    },
+    {
+        id: 3,
+        name: "Golden Park Bắc Ninh",
+        slug: "golden-park-que-vo-bac-ninh",
+        province: "bac-ninh",
+        location: "Phương Liễu, Quế Võ, Bắc Ninh",
+        price: "14.5 triệu/m2",
+        area: "40-70m²",
+        status: "open",
+        statusLabel: "Đang nhận hồ sơ",
+        isVisible: true,
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&fm=webp&q=75",
+        projectImages: [
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&fm=webp&q=80"
+        ],
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.2!2d106.05!3d21.12!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDA3JzEyLjAiTiAxMDbCsDAzJzAwLjAiRQ!5e0!3m2!1svi!2s!4v1234567892",
+        investor: "Công ty TNHH MTV Kim Thành",
+        scale: "18 tòa 18 tầng",
+        designUnit: "Kim Thành Design",
+        constructionUnit: "Kim Thành Construction",
+        legal: "Sổ hồng lâu dài",
+        handover: "Quý I/2026",
+        description: "Golden Park là dự án NOXH lớn nhất tại Bắc Ninh, phục vụ nhu cầu nhà ở cho hàng nghìn công nhân và chuyên gia tại KCN Quế Võ. Dự án có quy mô lớn với đầy đủ tiện ích hiện đại.",
+        amenities: ["Bể bơi", "Sân bóng đá", "Trường học liên cấp", "Chợ dân sinh", "Khu thể thao"],
+        locationAnalysis: {
+            east: "Giáp KCN Quế Võ",
+            west: "Giáp QL18",
+            south: "Giáp khu dân cư Phương Liễu",
+            north: "Giáp đường quy hoạch",
+            connection: "Nằm ngay trung tâm KCN Quế Võ, thuận tiện đi lại làm việc."
+        }
+    },
+    {
+        id: 4,
+        name: "Evergreen Bắc Giang",
+        slug: "evergreen-viet-yen-bac-giang",
+        province: "bac-giang",
+        location: "KĐT mới Nếnh, Việt Yên, Bắc Giang",
+        price: "13.2 triệu/m2",
+        area: "45-65m²",
+        status: "open",
+        statusLabel: "Đang mở bán",
+        isVisible: true,
+        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&fm=webp&q=75",
+        projectImages: [
+            "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&fm=webp&q=80",
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&fm=webp&q=80"
+        ],
+        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3728.1!2d106.18!3d21.28!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE2JzQ4LjAiTiAxMDbCsDEwJzQ4LjAiRQ!5e0!3m2!1svi!2s!4v1234567893",
+        investor: "Liên danh Evergreen Bắc Giang",
+        scale: "10 tòa 20 tầng",
+        designUnit: "Evergreen Design",
+        constructionUnit: "Evergreen Construction",
+        legal: "Sổ hồng lâu dài",
+        handover: "Quý II/2025",
+        description: "Dự án nhà ở xã hội kiểu mẫu tại Bắc Giang với thiết kế xanh, hiện đại và đồng bộ tiện ích. Evergreen Bắc Giang là lựa chọn lý tưởng cho người lao động tại các KCN.",
+        amenities: ["Công viên cây xanh", "Khu thể thao ngoài trời", "Shophouse mua sắm", "Trường mầm non"],
+        locationAnalysis: {
+            east: "Giáp KCN Vân Trung",
+            west: "Giáp KCN Quang Châu",
+            south: "Giáp đường cao tốc Hà Nội - Bắc Giang",
+            north: "Giáp khu dân cư Nếnh",
+            connection: "Vị trí vàng giữa các KCN lớn, dễ dàng kết nối về TP Bắc Giang và Bắc Ninh."
+        }
+    },
+];
+
+export const overviewData = [
+    {
+        id: 'noxh-la-gi',
+        title: 'Nhà ở xã hội là gì?',
+        content: 'Nhà ở xã hội là nhà ở có sự hỗ trợ của Nhà nước cho các đối tượng được hưởng chính sách hỗ trợ về nhà ở theo quy định của Luật Nhà ở.',
+    },
+    {
+        id: 'doi-tuong',
+        title: 'Đối tượng được mua NOXH',
+        content: '1. Người có công với cách mạng.\n2. Hộ gia đình nghèo và cận nghèo tại khu vực nông thôn.\n3. Hộ gia đình tại khu vực nông thôn thuộc vùng thường xuyên bị ảnh hưởng bởi thiên tai, biến đổi khí hậu.\n4. Người thu nhập thấp, hộ nghèo, cận nghèo tại khu vực đô thị.\n5. Người lao động đang làm việc tại các doanh nghiệp trong và ngoài khu công nghiệp.\n6. Sĩ quan, hạ sĩ quan nghiệp vụ, hạ sĩ quan chuyên môn kỹ thuật, quân nhân chuyên nghiệp, công nhân trong cơ quan, đơn vị thuộc công an nhân dân và quân đội nhân dân.\n7. Cán bộ, công chức, viên chức theo quy định của pháp luật về cán bộ, công chức, viên chức.',
+    },
+    {
+        id: 'dieu-kien',
+        title: 'Điều kiện được mua NOXH',
+        content: '1. Điều kiện về nhà ở: Chưa có nhà ở thuộc sở hữu của mình, chưa được mua, thuê hoặc thuê mua nhà ở xã hội, chưa được hưởng chính sách hỗ trợ nhà ở, đất ở dưới mọi hình thức tại nơi sinh sống, học tập hoặc có nhà ở thuộc sở hữu của mình nhưng diện tích nhà ở bình quân đầu người trong hộ gia đình thấp hơn mức diện tích nhà ở tối thiểu.\n2. Điều kiện về cư trú: Phải có đăng ký thường trú tại tỉnh, thành phố trực thuộc trung ương nơi có nhà ở xã hội; trường hợp không có đăng ký thường trú thì phải có đăng ký tạm trú từ 01 năm trở lên tại tỉnh, thành phố này.\n3. Điều kiện về thu nhập: Phải thuộc diện không phải nộp thuế thu nhập thường xuyên theo quy định của pháp luật về thuế thu nhập cá nhân.',
+    },
+];

@@ -1,0 +1,8 @@
+# Netlify/Vercel Redirects and SPA routing
+# This file handles redirects and rewrites for single-page applications
+
+# SPA routing - all non-file requests go to index.html
+/*    /index.html   200
+
+# Optional: Redirect www to non-www (or vice versa)
+# https://www.yourdomain.com/*  https://yourdomain.com/:splat  301!

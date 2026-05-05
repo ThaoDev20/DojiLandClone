@@ -1,0 +1,63 @@
+# Netlify/Vercel Headers Configuration
+# This file configures HTTP headers for static hosting platforms
+
+# Global security headers
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# HTML files - no cache
+/*.html
+  Cache-Control: no-cache, must-revalidate
+  
+# JavaScript and CSS with hash - immutable, long cache
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - long cache
+/*.jpg
+  Cache-Control: public, max-age=31536000
+  
+/*.jpeg
+  Cache-Control: public, max-age=31536000
+  
+/*.png
+  Cache-Control: public, max-age=31536000
+  
+/*.gif
+  Cache-Control: public, max-age=31536000
+  
+/*.webp
+  Cache-Control: public, max-age=31536000
+  
+/*.svg
+  Cache-Control: public, max-age=31536000
+  
+/*.ico
+  Cache-Control: public, max-age=31536000
+
+# Fonts - immutable, long cache
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+  
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+  
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+  
+/*.eot
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# JSON files - short cache
+/*.json
+  Cache-Control: public, max-age=3600

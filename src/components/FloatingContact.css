@@ -1,0 +1,114 @@
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column-reverse;
+    /* Stack upwards */
+    gap: 15px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    width: auto;
+    padding-left: 20px;
+    /* Changed from padding-right for right-side expansion */
+    border-radius: 25px;
+    flex-direction: row-reverse;
+    /* Flip content so icon is on right */
+}
+
+.contact-btn .btn-label {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    margin-right: 0;
+    /* Changed from margin-left */
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover .btn-label {
+    max-width: 200px;
+    margin-right: 10px;
+    /* Changed from margin-left */
+    opacity: 1;
+}
+
+/* Phone Button */
+.phone-btn {
+    background-color: #dc3545;
+}
+
+.phone-animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bounce 2s infinite;
+}
+
+/* Zalo Button */
+.zalo-btn {
+    background-color: #0068ff;
+    font-family: Arial, sans-serif;
+}
+
+.zalo-btn .btn-icon {
+    font-size: 35px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* Messenger Button */
+.messenger-btn {
+    background: linear-gradient(45deg, #0b8bf2, #a033ff);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-5px);
+    }
+
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-contact {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .contact-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Always show label on mobile? Maybe too cluttered. Keep collapse behavior. */
+    /* Or make them smaller */
+}

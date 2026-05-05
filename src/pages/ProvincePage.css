@@ -1,0 +1,54 @@
+.province-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1200x400?text=Province+Banner');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.province-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    color: white;
+}
+
+.province-desc {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    color: #e0e0e0;
+}
+
+.market-card {
+    background-color: var(--bg-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--secondary-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.not-found {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.not-found h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: #f8f9fa;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+}
+
+.section-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0;
+}
