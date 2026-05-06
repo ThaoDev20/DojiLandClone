@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import { DataProvider } from './context/DataContext';
 import { ModalProvider } from './context/ModalContext';
 import Layout from './components/Layout';
@@ -51,6 +51,7 @@ function App() {
   }, []);
 
   return (
+    <BrowserRouter base="/DojiLandClone/">
     <DataProvider>
       <ModalProvider>
         <Router>
@@ -77,6 +78,7 @@ function App() {
         </Router>
       </ModalProvider>
     </DataProvider>
+    </BrowserRouter>
   );
 }
 
