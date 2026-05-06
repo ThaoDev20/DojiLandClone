@@ -20,10 +20,10 @@ const menuItems = [
     label: 'Dự án',
     href: '/bat-dong-san-nha-o',
     children: [
-      { label: 'Bất động sản Nhà ở', href: '/bat-dong-san-nha-o' },
-      { label: 'Bất động sản Văn phòng', href: '/bat-dong-san-van-phong' },
-      { label: 'Bất động sản Nghỉ dưỡng', href: '/bat-dong-san-nghi-duong' },
-      { label: 'Khu đô thị', href: '/khu-do-thi' },
+      { label: 'NOXH Việt Thắng', href: '/bat-dong-san-nha-o' },
+      // { label: 'Bất động sản Văn phòng', href: '/bat-dong-san-van-phong' },
+      // { label: 'Bất động sản Nghỉ dưỡng', href: '/bat-dong-san-nghi-duong' },
+      // { label: 'Khu đô thị', href: '/khu-do-thi' },
     ],
   },
   {
