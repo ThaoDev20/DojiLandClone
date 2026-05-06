@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
-const LOGO_FOOTER = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/logo-footer.svg';
+const LOGO_FOOTER = '';
 const FOOTER_BG = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-bg.jpg';
 const FOOTER_DECOR_BOTTOM = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-decor1.png';
 const FORM_DECOR_1 = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-decor3.png';
@@ -53,7 +53,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-left">
             <Link to="/" className="footer-logo">
-              <img src={LOGO_FOOTER} alt="DOJILAND" />
+              <img src={LOGO_FOOTER} alt="Logo" />
             </Link>
           </div>
 

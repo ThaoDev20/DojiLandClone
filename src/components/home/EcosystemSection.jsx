@@ -166,7 +166,7 @@ const EcosystemSection = () => {
       className={`ecosystem-section ${isVisible ? 'is-visible' : ''}`}
       style={{ backgroundImage: `url(${SECTION_BG})` }}
     >
-      <div className="ecosystem-block">
+      {/* <div className="ecosystem-block">
         <h2 className="ecosystem-title">Hệ thống tập đoàn</h2>
 
         <div className="ecosystem-active-wrap">
@@ -214,7 +214,7 @@ const EcosystemSection = () => {
           </a>
           {ecosystems[activeEco].desc && <p>{ecosystems[activeEco].desc}</p>}
         </div>
-      </div>
+      </div> */}
 
       <div className="partner-block">
         <h2 className="ecosystem-title partner-title">Đối tác</h2>

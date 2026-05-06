@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import './Header.css';
 import { useData } from '../context/DataContext';
 
-const LOGO_URL = 'https://dojiland.vn/wp-content/themes/main/assets/images/logo.svg';
+const LOGO_URL = '';
 
 const highlightItems = [
   { label: 'Các dự án nổi bật', hash: 'projects_highlight' },
@@ -97,7 +97,7 @@ const Header = () => {
     <header className={`header ${shouldUseScrolledStyle ? 'scrolled' : ''}`}>
       <div className="header-desktop">
         <Link to="/" className="header-logo">
-          <img src={LOGO_URL} alt="DOJILAND" />
+          <img src={LOGO_URL} alt="Logo" />
         </Link>
 
         {
