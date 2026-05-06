@@ -51,7 +51,6 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter base="/DojiLandClone/">
       <DataProvider>
         <ModalProvider>
           <Router>
@@ -78,7 +77,6 @@ function App() {
           </Router>
         </ModalProvider>
       </DataProvider>
-    </BrowserRouter>
   );
 }
 
