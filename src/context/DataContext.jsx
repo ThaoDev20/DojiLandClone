@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import { projects as initialProjects, provinces } from '../data/mockData';
-import { fetchNews, fetchProjects, fetchProvinces } from '../services/dataService';
+import { fetchNews, fetchProjects } from '../services/dataService';
 import { submitRegistration } from '../services/formSubmission';
 
 const DataContext = createContext();
@@ -103,8 +103,7 @@ const defaultSettings = {
 export const DataProvider = ({ children }) => {
 
     const [data, setData] = useState({
-        projects: initialProjects, // Start with mock data immediately
-        provinces: provinces,
+        projects: [], // Start with mock data immediately
         news: [],
         settings: defaultSettings
     });
@@ -118,8 +117,6 @@ export const DataProvider = ({ children }) => {
             const ENABLE_DYNAMIC_FETCH = import.meta.env.VITE_ENABLE_DYNAMIC_FETCH === 'true';
 
             if (!ENABLE_DYNAMIC_FETCH) {
-                console.log('📦 Using static data (fast mode)');
-                console.log('💡 To update data: run "npm run sync-data"');
                 setIsLoading(false);
                 return;
             }
@@ -139,7 +136,6 @@ export const DataProvider = ({ children }) => {
             if (cachedData && cacheTimestamp) {
                 const age = Date.now() - parseInt(cacheTimestamp);
                 if (age < CACHE_DURATION) {
-                    console.log('⚡ Loading from cache (age: ' + Math.round(age / 1000) + 's)');
                     const cached = JSON.parse(cachedData);
                     setData(prev => ({
                         ...prev,
@@ -150,14 +146,12 @@ export const DataProvider = ({ children }) => {
                     setIsLoading(false);
 
                     // Fetch in background to update cache
-                    console.log('🔄 Updating cache in background...');
                     fetchAndCache();
                     return;
                 }
             }
 
             // No cache or expired - fetch now
-            console.log('📡 Fetching fresh data...');
             await fetchAndCache();
         };
 
@@ -165,16 +159,15 @@ export const DataProvider = ({ children }) => {
 
             try {
                 // Fetch in parallel
-                const [newsData, projectsData, provincesData] = await Promise.all([
+                const [newsData, projectsData] = await Promise.all([
                     fetchNews(),
                     fetchProjects(),
-                    fetchProvinces()
                 ]);
+
 
                 console.log('Fetched data:', {
                     news: newsData.length,
                     projects: projectsData.length,
-                    provinces: provincesData.length
                 });
 
                 // IMPORTANT: Only update if we got actual data
@@ -186,14 +179,11 @@ export const DataProvider = ({ children }) => {
                 }
 
                 if (projectsData.length > 0) {
+                   
                     // Validate and deduplicate projects by slug
                     // Also parse JSON fields from Google Sheets
                     const parsedProjects = projectsData.map(parseProjectData);
                     newData.projects = deduplicateBySlug(validateSlugs(parsedProjects));
-                }
-
-                if (provincesData.length > 0) {
-                    newData.provinces = provincesData;
                 }
 
                 setData(prev => ({
@@ -205,7 +195,6 @@ export const DataProvider = ({ children }) => {
                 if (Object.keys(newData).length > 0) {
                     const cacheData = {
                         projects: newData.projects || data.projects,
-                        provinces: newData.provinces || data.provinces,
                         news: newData.news || data.news
                     };
                     localStorage.setItem('noxh_data_cache', JSON.stringify(cacheData));
@@ -245,11 +234,12 @@ export const DataProvider = ({ children }) => {
         }
     };
 
+    console.log('data', data);
+
     return (
         <DataContext.Provider value={{
             projects: data.projects,
             visibleProjects: getVisibleProjects(),
-            provinces: data.provinces,
             news: data.news,
             visibleNews: getVisibleNews(),
             settings: data.settings,

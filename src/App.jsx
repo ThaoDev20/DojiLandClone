@@ -3,12 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 import { DataProvider } from './context/DataContext';
 import { ModalProvider } from './context/ModalContext';
 import Layout from './components/Layout';
-import RegistrationModal from './components/RegistrationModal';
 import Home from './pages/Home';
 
 // Lazy load secondary pages for better performance
 // const ProvincePage = lazy(() => import('./pages/ProvincePage'));
-// const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
+const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
 // const ProjectListPage = lazy(() => import('./pages/ProjectListPage'));
 // const ConditionsPage = lazy(() => import('./pages/ConditionsPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -58,7 +57,7 @@ function App() {
                 {/* Public Routes */}
                 <Route path="/" element={<Layout><Home /></Layout>} />
                 {/* <Route path="/tinh/:slug" element={<Layout><ProvincePage /></Layout>} /> */}
-                {/* <Route path="/du-an/:slug" element={<Layout><ProjectDetailPage /></Layout>} /> */}
+                <Route path="/du-an/:slug" element={<Layout><ProjectDetailPage /></Layout>} />
                 <Route path="/lien-he" element={<Layout><ContactPage /></Layout>} />
                 <Route path="/tin-du-an" element={<Layout><NewsPage /></Layout>} />
                 <Route path="/ban-lanh-dao" element={<Layout><BOD /></Layout>} />

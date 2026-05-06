@@ -1,43 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import './Header.css';
+import { useData } from '../context/DataContext';
 
 const LOGO_URL = 'https://dojiland.vn/wp-content/themes/main/assets/images/logo.svg';
-
-const menuItems = [
-  {
-    label: 'Giới thiệu',
-    href: '/gioi-thieu',
-    children: [
-      { label: 'Giới thiệu chung', href: '/gioi-thieu' },
-      { label: 'Ban lãnh đạo', href: '/ban-lanh-dao' },
-      { label: 'Hệ sinh thái DOJI', href: '#' },
-      { label: 'Giải thưởng', href: '#' },
-    ],
-  },
-  {
-    label: 'Dự án',
-    href: '/bat-dong-san-nha-o',
-    children: [
-      { label: 'NOXH Việt Thắng', href: '/bat-dong-san-nha-o' },
-      // { label: 'Bất động sản Văn phòng', href: '/bat-dong-san-van-phong' },
-      // { label: 'Bất động sản Nghỉ dưỡng', href: '/bat-dong-san-nghi-duong' },
-      // { label: 'Khu đô thị', href: '/khu-do-thi' },
-    ],
-  },
-  {
-    label: 'Truyền thông',
-    href: '/tin-du-an',
-    children: [
-      { label: 'Tin tức', href: '/tin-du-an' },
-      { label: 'Video', href: '#' },
-      { label: 'Bản tin', href: '#' },
-    ],
-  },
-  { label: 'Tuyển dụng', href: '/tuyen-dung' },
-  { label: 'Liên hệ', href: '/lien-he' },
-];
 
 const highlightItems = [
   { label: 'Các dự án nổi bật', hash: 'projects_highlight' },
@@ -49,6 +16,40 @@ const Header = () => {
   const [openSubmenu, setOpenSubmenu] = useState({});
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { projects } = useData();
+
+  const menuItems = useMemo(() => {
+    const baseMenu = [
+      {
+        label: 'Giới thiệu',
+        href: '/gioi-thieu',
+        children: [{ label: 'Giới thiệu chung', href: '/gioi-thieu' }],
+      },
+    ];
+
+    if (projects && projects.length > 0) {
+      baseMenu.push({
+        label: 'Dự án',
+        href: `/du-an/${projects[0].slug}`,
+        children: projects.map(proj => ({
+          label: proj.name,
+          href: `/du-an/${proj.slug}`
+        }))
+      });
+    }
+
+    baseMenu.push(
+      {
+        label: 'Truyền thông',
+        href: '/tin-du-an',
+        children: [{ label: 'Tin tức', href: '/tin-du-an' }],
+      },
+      { label: 'Tuyển dụng', href: '/tuyen-dung' },
+      { label: 'Liên hệ', href: '/lien-he' }
+    );
+
+    return baseMenu;
+  }, [projects]); 
 
   const isHomePage = location.pathname === '/';
   const shouldUseScrolledStyle = isScrolled || !isHomePage;

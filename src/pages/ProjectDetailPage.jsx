@@ -4,7 +4,7 @@ import { useData } from '../context/DataContext';
 import { useModal } from '../context/ModalContext';
 import { MapPin, Building, Ruler, Calendar, CheckSquare, Phone } from 'lucide-react';
 import Button from '../components/Button';
-import InterestForm from '../components/home/InterestForm';
+// import InterestForm from '../components/home/InterestForm';
 import './ProjectDetailPage.css';
 
 const ProjectDetailPage = () => {
@@ -102,9 +102,6 @@ const ProjectDetailPage = () => {
                             </div>
 
                             <div className="header-actions">
-                                <Button onClick={handleRegister} variant="primary" className="w-full">
-                                    Đăng ký nhận hồ sơ
-                                </Button>
                                 <Button onClick={() => window.open('tel:0914824825')} variant="outline" className="w-full">
                                     <Phone size={18} style={{ marginRight: 8 }} /> Hotline tư vấn
                                 </Button>
@@ -194,7 +191,7 @@ const ProjectDetailPage = () => {
             </section>
 
             {/* 5. CTA Form */}
-            <InterestForm />
+            {/* <InterestForm /> */}
         </div>
     );
 };

@@ -1,36 +1,22 @@
-/**
- * Data Service
- * Handles fetching data (News, Projects, Provinces) from Local Cache (Server-generated)
- * Fallback to GAS if cache fails is optional but cache is preferred for speed.
- */
+
 
 const CACHE_URL = '/data/cache.json';
 const GOOGLE_APPS_SCRIPT_URL = import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL;
 
-// Simple memory cache for the session to avoid repeated requests if needed, 
-// but browser cache on the json file should handle this.
 
-/**
- * Fetch all data from the static cache file
- */
 const fetchAllFromCache = async () => {
     try {
-        // Add timestamp to prevent browser aggressive caching for the meta-request
-        // but typically nginx handles this with ETags.
-        // For simplicity, we just fetch.
         const response = await fetch(CACHE_URL);
         if (!response.ok) throw new Error('Cache missing');
         const data = await response.json();
-        return data; // { news, projects, provinces, timestamp }
+        return data; 
     } catch (error) {
         console.warn('Cache fetch failed, falling back to direct GAS:', error);
         return null;
     }
 };
 
-/**
- * Generic fetch function for GAS (Legacy/Fallback)
- */
+
 const fetchFromGAS = async (action) => {
     if (!GOOGLE_APPS_SCRIPT_URL) return [];
     try {
@@ -48,7 +34,6 @@ const fetchFromGAS = async (action) => {
     }
 };
 
-// We will cache the promise to avoid multiple simultaneous requests
 let globalCachePromise = null;
 
 const getCachedData = async () => {
@@ -57,7 +42,6 @@ const getCachedData = async () => {
     globalCachePromise = fetchAllFromCache();
     const data = await globalCachePromise;
 
-    // If cache failed, clear promise so we retry next time
     if (!data) {
         globalCachePromise = null;
     }
@@ -74,12 +58,6 @@ export const fetchProjects = async () => {
     const data = await getCachedData();
     if (data && data.projects) return data.projects;
     return fetchFromGAS('getProjects');
-};
-
-export const fetchProvinces = async () => {
-    const data = await getCachedData();
-    if (data && data.provinces) return data.provinces;
-    return fetchFromGAS('getProvinces');
 };
 
 
