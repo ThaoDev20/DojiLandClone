@@ -52,32 +52,32 @@ function App() {
 
   return (
     <BrowserRouter base="/DojiLandClone/">
-    <DataProvider>
-      <ModalProvider>
-        <Router>
-          <Suspense fallback={<LoadingFallback />}>
-            <Routes>
-              {/* Public Routes */}
-              <Route path="/" element={<Layout><Home /></Layout>} />
-              {/* <Route path="/tinh/:slug" element={<Layout><ProvincePage /></Layout>} /> */}
-              {/* <Route path="/du-an/:slug" element={<Layout><ProjectDetailPage /></Layout>} /> */}
-              <Route path="/lien-he" element={<Layout><ContactPage /></Layout>} />
-              <Route path="/tin-du-an" element={<Layout><NewsPage /></Layout>} />
-              <Route path="/ban-lanh-dao" element={<Layout><BOD /></Layout>} />
-              <Route path="/gioi-thieu" element={<Layout><Introduce /></Layout>} />
-              <Route path="/tuyen-dung" element={<Layout><RecruitmentPage /></Layout>} />
-              <Route path="/tin-tuc/:id" element={<Layout><NewsDetailPage /></Layout>} />
-              <Route path="/bat-dong-san-nha-o" element={<Layout><ResidentialRealEstatePage /></Layout>} />
-              <Route path="/bat-dong-san-van-phong" element={<Layout><OfficeRealEstatePage /></Layout>} />
-              <Route path="/bat-dong-san-nghi-duong" element={<Layout><ResortRealEstatePage /></Layout>} />
-              <Route path="/khu-do-thi" element={<Layout><UrbanAreaPage /></Layout>} />
+      <DataProvider>
+        <ModalProvider>
+          <Router>
+            <Suspense fallback={<LoadingFallback />}>
+              <Routes>
+                {/* Public Routes */}
+                <Route path="/" element={<Layout><Home /></Layout>} />
+                {/* <Route path="/tinh/:slug" element={<Layout><ProvincePage /></Layout>} /> */}
+                {/* <Route path="/du-an/:slug" element={<Layout><ProjectDetailPage /></Layout>} /> */}
+                <Route path="/lien-he" element={<Layout><ContactPage /></Layout>} />
+                <Route path="/tin-du-an" element={<Layout><NewsPage /></Layout>} />
+                <Route path="/ban-lanh-dao" element={<Layout><BOD /></Layout>} />
+                <Route path="/gioi-thieu" element={<Layout><Introduce /></Layout>} />
+                <Route path="/tuyen-dung" element={<Layout><RecruitmentPage /></Layout>} />
+                <Route path="/tin-tuc/:id" element={<Layout><NewsDetailPage /></Layout>} />
+                <Route path="/bat-dong-san-nha-o" element={<Layout><ResidentialRealEstatePage /></Layout>} />
+                <Route path="/bat-dong-san-van-phong" element={<Layout><OfficeRealEstatePage /></Layout>} />
+                <Route path="/bat-dong-san-nghi-duong" element={<Layout><ResortRealEstatePage /></Layout>} />
+                <Route path="/khu-do-thi" element={<Layout><UrbanAreaPage /></Layout>} />
 
-            </Routes>
-          </Suspense>
-          {/* <RegistrationModal /> */}
-        </Router>
-      </ModalProvider>
-    </DataProvider>
+              </Routes>
+            </Suspense>
+            {/* <RegistrationModal /> */}
+          </Router>
+        </ModalProvider>
+      </DataProvider>
     </BrowserRouter>
   );
 }
