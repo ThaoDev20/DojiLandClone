@@ -11,17 +11,17 @@ const ContactPage = () => {
                     <div className="info-box">
                         <Phone size={48} color="var(--primary-color)" style={{ marginBottom: '1rem' }} />
                         <h3>Hotline</h3>
-                        <p className="text-large" style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>0845.668.386</p>
+                        <p className="text-large" style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--primary-color)' }}></p>
                     </div>
                     <div className="info-box">
                         <Mail size={48} color="var(--primary-color)" style={{ marginBottom: '1rem' }} />
                         <h3>Email</h3>
-                        <p>tamthanhlandvn@gmail.com</p>
+                        <p>vithacobg@gmail.com</p>
                     </div>
                     <div className="info-box">
                         <MapPin size={48} color="var(--primary-color)" style={{ marginBottom: '1rem' }} />
                         <h3>Văn phòng</h3>
-                        <p>Số 59 đường Lê Hồng Phong, Phường Bắc Giang, Tỉnh Bắc Ninh</p>
+                        <p>Tòa nhà đa năng Việt Thắng, đường Hoàng Văn Thụ, Phường Xương Giang, Thành phố Bắc Giang, Tỉnh Bắc Giang</p>
                     </div>
                 </div>
             </div>

@@ -11,32 +11,20 @@ const events = [
     href: 'https://dojiland.vn/4835-2/',
   },
   {
-    image: 'https://dojiland.vn/wp-content/uploads/2025/11/DSC02558-scaled.jpg',
-    href: 'https://dojiland.vn/du-an-emerald-symphony-chinh-thuc-khoi-dong/',
-  },
-  {
     image: 'https://dojiland.vn/wp-content/uploads/2025/10/DSC08380-scaled.jpg',
     href: 'https://dojiland.vn/golden-crown-hai-phong-chinh-thuc-cat-noc-khang-dinh-vi-the-bieu-tuong-pho-cang/',
   },
-  {
-    image: 'https://dojiland.vn/wp-content/uploads/2025/08/Pioneers.png',
-    href: 'https://dojiland.vn/dojiland-thang-lon-tai-dot-property-vietnam-awards-2025/',
-  },
-  {
-    image: 'https://dojiland.vn/wp-content/uploads/2025/07/Picture1.jpg',
-    href: 'https://dojiland.vn/tap-doan-doji-va-hai-phong-hop-tac-chien-luoc-phat-trien-do-thi-tam-co/',
+    {
+    image: 'https://dojiland.vn/wp-content/uploads/2025/12/Phoi-canh-2-toa.jpg',
+    href: 'https://dojiland.vn/4835-2/',
   },
   {
     image: 'https://dojiland.vn/wp-content/uploads/2024/12/4.jpg',
     href: 'https://dojiland.vn/dojiland-giu-vung-danh-hieu-nha-phat-trien-bat-dong-san-hang-sang-tot-nhat-dong-nam-a-2024/',
   },
-  {
-    image: 'https://dojiland.vn/wp-content/uploads/2024/11/Bang-khen-TTCP.jpg',
-    href: 'https://dojiland.vn/dojiland-ki-niem-10-nam-thanh-lap-va-don-nhan-bang-khen-cua-thu-tuong-chinh-phu/',
-  },
-  {
-    image: 'https://dojiland.vn/wp-content/uploads/2024/11/Ki-ket.jpg',
-    href: 'https://dojiland.vn/tap-doan-doji-dua-thuong-hieu-dang-cap-quoc-te-sofitel-den-hai-phong/',
+    {
+    image: 'https://dojiland.vn/wp-content/uploads/2025/12/Phoi-canh-2-toa.jpg',
+    href: 'https://dojiland.vn/4835-2/',
   },
   {
     image: 'https://dojiland.vn/wp-content/uploads/2024/06/Chung-nhan.jpg',

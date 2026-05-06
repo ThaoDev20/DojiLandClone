@@ -4,7 +4,6 @@ import './Footer.css';
 
 const LOGO_FOOTER = '';
 const FOOTER_BG = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-bg.jpg';
-const FOOTER_DECOR_BOTTOM = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-decor1.png';
 const FORM_DECOR_1 = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-decor3.png';
 const FORM_DECOR_2 = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-decor2.png';
 
@@ -14,8 +13,8 @@ const LOCATION_ICON = 'https://dojiland.vn/wp-content/themes/main/assets/images/
 
 const footerMenu = [
   { label: 'Giới thiệu', href: '/gioi-thieu' },
-  { label: 'Dự án', href: '/project_category/bat-dong-san-nha-o' },
-  { label: 'Truyền thông', href: '/tin-noi-bat' },
+  { label: 'Dự án', href: '#' },
+  { label: 'Truyền thông', href: '/tin-du-an' },
   { label: 'Tuyển dụng', href: '/tuyen-dung' },
   { label: 'Liên hệ', href: '/lien-he' },
 ];
@@ -59,7 +58,7 @@ const Footer = () => {
 
           <div className="footer-center">
             <div className="footer-column">
-              <h3 className="footer-title">Về Dojiland</h3>
+              <h3 className="footer-title">Về Việt Thắng</h3>
 
               <ul className="footer-menu">
                 {footerMenu.map((item) => (
@@ -75,18 +74,18 @@ const Footer = () => {
 
               <p>
                 <img src={PHONE_ICON} alt="" />
-                <a href="tel:02433662288">024 3366 2288</a>
+                {/* <a href="tel:02433662288">024 3366 2288</a> */}
               </p>
 
               <p>
                 <img src={EMAIL_ICON} alt="" />
-                <a href="mailto:cskh@dojiland.vn">cskh@dojiland.vn</a>
+                <a href="mailto:cskh@dojiland.vn">vithacobg@gmail.com</a>
               </p>
 
               <p>
                 <img src={LOCATION_ICON} alt="" />
                 <span>
-                  Tầng 9, Tòa nhà DOJI TOWER, Số 5 Lê Duẩn, Ba Đình, Hà Nội.
+                  Tòa nhà đa năng Việt Thắng, đường Hoàng Văn Thụ, Phường Xương Giang, Thành phố Bắc Giang, Tỉnh Bắc Giang, Việt Nam.
                 </span>
               </p>
             </div>
@@ -94,7 +93,7 @@ const Footer = () => {
 
           <div className="footer-right">
             <p className="footer-notice">
-              Đăng ký nhận thông tin mới nhất từ DOJILAND
+              Đăng ký nhận thông tin mới nhất từ Việt Thắng
             </p>
 
             <form className="footer-form" onSubmit={handleSubmit}>
@@ -121,16 +120,15 @@ const Footer = () => {
             )}
 
             <p className="footer-copyright footer-copyright-desktop">
-              Copyright © DOJILAND 2023. All rights reserved
+              Copyright © Việt Thắng . All rights reserved
             </p>
           </div>
 
           <p className="footer-copyright footer-copyright-mobile">
-            Copyright © DOJILAND 2023. All rights reserved
+            Copyright © Việt Thắng . All rights reserved
           </p>
         </div>
 
-        <img className="footer-decor-bottom" src={FOOTER_DECOR_BOTTOM} alt="" />
       </div>
     </footer>
   );

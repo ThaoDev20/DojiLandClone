@@ -50,7 +50,7 @@ const IntroSection = () => {
 
       <div className="intro-container">
         <h2 className="intro-title intro-title-mobile">
-          Giới thiệu về DOJILAND
+          Giới thiệu về Việt Thắng
         </h2>
 
         <div className="intro-left intro-animate-left">
@@ -62,18 +62,18 @@ const IntroSection = () => {
             />
 
             <a href="https://doji.vn/" target="_blank" rel="noreferrer">
-              <span>Thành viên của Tập Đoàn</span>
-              <img
+              <span>Công ty TNHH Việt Thắng</span>
+              {/* <img
                 src="https://dojiland.vn/wp-content/themes/main/assets/images/common/logo.png"
                 alt="DOJI"
-              />
+              /> */}
             </a>
           </div>
 
           <div className="intro-thumbnail">
             <img
               className="intro-frame"
-              src="https://dojiland.vn/wp-content/themes/main/assets/images/common/s2_decor4.png"
+              src="https://drive.google.com/thumbnail?id=1GG7S2pJz92mjji_Jb4GMCGVCogx-Qmvq&sz=w1000"
               alt=""
             />
 
@@ -87,23 +87,18 @@ const IntroSection = () => {
 
         <div className="intro-right intro-animate-right">
           <h2 className="intro-title">
-            Giới thiệu về DOJILAND
+            Giới thiệu về Việt Thắng
           </h2>
+
+
 
           <div className="intro-text">
             <p className="intro-lead">
-              Tiên phong phát triển dòng sản phẩm KIM ĐỊA ỐC – Bất động sản nghệ thuật kim hoàn
+              Tiên phong phát triển dòng sản phẩm Bất động sản
             </p>
 
             <p>
-              Thành lập vào năm 2014, DOJILAND là thành viên của Tập đoàn Vàng
-              bạc đá quý DOJI – Tập đoàn kinh doanh đa ngành, Top 3 Doanh
-              nghiệp tư nhân lớn nhất Việt Nam, với lĩnh vực then chốt là Vàng
-              bạc đá quý, Tài chính và Bất động sản. Thừa hưởng từ DOJI Uy tín
-              sản phẩm, thương hiệu đẳng cấp, Tiềm lực tài chính hùng mạnh,
-              Năng lực quản trị vượt trội, DOJILAND đã và đang khẳng định được
-              sức mạnh trong các dự án đầu tư cũng như vị thế dẫn đầu trên thị
-              trường bất động sản.
+              Giới thiệu về Việt Thắng
             </p>
           </div>
 

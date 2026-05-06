@@ -3,16 +3,16 @@ import './HeroSection.css';
 
 const slides = [
   {
-    image: 'https://dojiland.vn/wp-content/uploads/2026/03/Artboard-1.png',
-    alt: 'DOJILAND Banner 1',
+    image: 'https://drive.google.com/thumbnail?id=1GG7S2pJz92mjji_Jb4GMCGVCogx-Qmvq&sz=w1000',
+    alt: 'Việt Thắng Banner 1',
   },
   {
     image: 'https://dojiland.vn/wp-content/uploads/2024/02/Banner-website.jpg',
-    alt: 'DOJILAND Banner 2',
+    alt: 'Việt Thắng Banner 2',
   },
   {
     image: 'https://dojiland.vn/wp-content/uploads/2023/07/Group-4104.jpg',
-    alt: 'DOJILAND Banner 3',
+    alt: 'Việt Thắng Banner 3',
   },
 ];
 
