@@ -39,16 +39,16 @@ const LoadingFallback = () => (
 
 function App() {
   // Fix double URL issue with hash (e.g. /path#/path)
-  React.useEffect(() => {
-    if (window.location.hash && window.location.hash.startsWith('#/')) {
-      const hashPath = window.location.hash.substring(1); // remove #
-      // If hash path looks like the current pathname (ignoring query params)
-      if (hashPath === window.location.pathname || hashPath.startsWith(window.location.pathname)) {
-        console.log('Sanitizing URL: Removing redundant hash');
-        window.history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   if (window.location.hash && window.location.hash.startsWith('#/')) {
+  //     const hashPath = window.location.hash.substring(1); // remove #
+  //     // If hash path looks like the current pathname (ignoring query params)
+  //     if (hashPath === window.location.pathname || hashPath.startsWith(window.location.pathname)) {
+  //       console.log('Sanitizing URL: Removing redundant hash');
+  //       window.history.replaceState(null, '', window.location.pathname + window.location.search);
+  //     }
+  //   }
+  // }, []);
 
   return (
       <DataProvider>
