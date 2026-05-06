@@ -2,7 +2,7 @@ name: Deploy Vite site to Pages
 
 on:
   push:
-    branches: ["master"] # Hoặc tên nhánh chính của bạn
+    branches: ["master"] # Đã đúng với nhánh của bạn
 
 permissions:
   contents: read
@@ -27,11 +27,14 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          # Phải thụt vào 2 khoảng trắng so với chữ env
+          VITE_GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Thư mục build của Vite
+          path: ./dist
 
   deploy:
     environment:
