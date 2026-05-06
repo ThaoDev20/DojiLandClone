@@ -7,10 +7,10 @@ import RegistrationModal from './components/RegistrationModal';
 import Home from './pages/Home';
 
 // Lazy load secondary pages for better performance
-const ProvincePage = lazy(() => import('./pages/ProvincePage'));
-const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
-const ProjectListPage = lazy(() => import('./pages/ProjectListPage'));
-const ConditionsPage = lazy(() => import('./pages/ConditionsPage'));
+// const ProvincePage = lazy(() => import('./pages/ProvincePage'));
+// const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
+// const ProjectListPage = lazy(() => import('./pages/ProjectListPage'));
+// const ConditionsPage = lazy(() => import('./pages/ConditionsPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const NewsDetailPage = lazy(() => import('./pages/NewsDetailPage'));
 const NewsPage = lazy(() => import('./pages/NewsPage'));
