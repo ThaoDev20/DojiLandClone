@@ -30,6 +30,8 @@ jobs:
         env:
           # Phải thụt vào 2 khoảng trắng so với chữ env
           VITE_GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
+          VITE_ENABLE_DYNAMIC_FETCH: ${{ secrets.VITE_ENABLE_DYNAMIC_FETCH }}
+          VITE_CACHE_DURATION: ${{ secrets.VITE_CACHE_DURATION }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
