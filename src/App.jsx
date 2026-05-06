@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { DataProvider } from './context/DataContext';
 import { ModalProvider } from './context/ModalContext';
 import Layout from './components/Layout';
@@ -53,7 +53,6 @@ function App() {
   return (
       <DataProvider>
         <ModalProvider>
-          <Router>
             <Suspense fallback={<LoadingFallback />}>
               <Routes>
                 {/* Public Routes */}
@@ -74,7 +73,6 @@ function App() {
               </Routes>
             </Suspense>
             {/* <RegistrationModal /> */}
-          </Router>
         </ModalProvider>
       </DataProvider>
   );
