@@ -6,7 +6,7 @@ const recruitmentItems = [
   {
     title: 'CƠ HỘI PHÁT TRIỂN SỰ NGHIỆP',
     desc: 'Tại Việt Thắng, người lao động được tạo điều kiện và trao cơ hội để phát triển sự nghiệp và gắn kết chặt chẽ với mục tiêu phát triển bền vững của toàn công ty.',
-    image: 'https://cdnphoto.dantri.com.vn/2tPc7CcfcQ8pLvRR2vhvnPfNohE=/thumb_w/1155/2022/04/08/6-giai-doan-phat-trien-su-nghiep-ban-dang-o-nac-thang-naodocx-1649430545228.jpeg',
+    image: 'https://media-blog.jobsgo.vn/blog/wp-content/uploads/2023/11/cac-giai-doan-phat-trien-su-nghiep.jpg',
   },
   {
     title: 'MÔI TRƯỜNG LÀM VIỆC CHUYÊN NGHIỆP, ĐẲNG CẤP',
