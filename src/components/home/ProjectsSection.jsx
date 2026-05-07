@@ -9,43 +9,43 @@ import './ProjectsSection.css';
 const projects = [
   {
     number: '01',
-    title: 'EMERALD SYMPHONY',
-    href: 'https://dojiland.vn/projects/du-an-emerald-symphony/',
-    thumbnail: 'https://dojiland.vn/wp-content/uploads/2025/11/1-scaled.jpg',
+    title: 'Dự án Demo 1',
+    href: '#',
+    thumbnail: 'https://i1-vnexpress.vnecdn.net/2026/05/06/dji-jpg-jpeg-1778056884-3667-1778057333.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=R5cMN8nrxOeg7IM5Tz1OjQ',
     excerpt: '',
   },
   {
     number: '02',
-    title: 'GOLDEN CROWN HAI PHONG',
-    href: 'https://dojiland.vn/projects/golden-crown-hai-phong/',
+    title: 'Dự án Demo 2',
+    href: '#',
     thumbnail:
-      'https://dojiland.vn/wp-content/uploads/2024/02/RENDER-03-Semi-Aerial-View-DOJI-HP-2-CD-R06-230818.png',
+      'https://i1-vnexpress.vnecdn.net/2026/05/01/1-1777602070.jpg?w=1200&h=0&q=100&dpr=2&fit=crop&s=H_pnWupI71TeLEMNX9hBSw',
     excerpt: '',
   },
   {
     number: '03',
-    title: 'DIAMOND CROWN HAI PHONG',
-    href: 'https://dojiland.vn/projects/diamond-crown-hai-phong/',
-    thumbnail: 'https://dojiland.vn/wp-content/uploads/2023/07/LXHQmyHw-scaled-2.jpg',
+    title: 'Dự án Demo 3',
+    href: '#',
+    thumbnail: 'https://i1-vnexpress.vnecdn.net/2026/05/01/5-1777602078.jpg?w=1200&h=0&q=100&dpr=2&fit=crop&s=kWRaCQhcNKvlnHjlJSNqFQ',
     excerpt:
-      'Dự án đầu tiên thuộc dòng sản phẩm Diamond Crown mang tên Diamond Crown Hai Phong, tọa lạc tại giao lộ Nguyễn Bỉnh Khiêm, Lê Hồng Phong, TP. Hải Phòng',
+      'Dự án Demo 3 là một dự án tọa lạc tại giao lộ ...',
   },
   {
     number: '04',
-    title: 'THE SAPPHIRE MANSIONS',
-    href: 'https://dojiland.vn/projects/the-sapphire-mansions/',
+    title: 'Dự án Demo 4',
+    href: '#',
     thumbnail:
-      'https://dojiland.vn/wp-content/uploads/2023/07/Image-895570177-ExtractWord-1-2292-2259-1634634921.png',
+      'https://i1-vnexpress.vnecdn.net/2026/05/05/smartcity-1777962773-8386-1777963176.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=Rb3dtH6EYmJsUYKmFnu6SQ',
     excerpt:
-      'Dự án The Sapphire Mansions là quần thể dinh thự mặt biển hạng sang tại thành phố Hạ Long, Quảng Ninh.',
+      'Dự án Demo 4 là quần thể dinh thự mặt biển hạng đầu tiên tại thành phố ...',
   },
   {
     number: '05',
-    title: 'The Sapphire Residence',
-    href: 'https://dojiland.vn/projects/the-sapphire-residence/',
+    title: 'Dự án Demo 5',
+    href: '#',
     thumbnail: 'https://dojiland.vn/wp-content/uploads/2023/07/TT1.jpeg',
     excerpt:
-      'Nằm ngay bên bờ biển trong lòng kỳ quan thiên nhiên thế giới Vịnh Hạ Long, The Sapphire Residence là khu đô thị Hạng A đẳng cấp Quốc tế đầu tiên tại Quảng Ninh.',
+      'Nằm ngay bên bờ biển trong lòng kỳ quan thiên nhiên thế giới Vịnh Hạ Long, Dự án Demo 5 là khu đô thị Hạng A đẳng cấp Quốc tế đầu tiên tại Quảng Ninh.',
   },
 ];
 
@@ -107,11 +107,6 @@ function ProjectsSection() {
       className={`projects-highlight ${isVisible ? 'is-visible' : ''}`}
       id="projects_highlight"
     >
-      <img
-        className="projects-decor-bg"
-        src="https://dojiland.vn/wp-content/themes/main/assets/images/common/s4-decor1.png"
-        alt=""
-      />
 
       <h2 className="projects-title">Các dự án Nổi bật</h2>
 

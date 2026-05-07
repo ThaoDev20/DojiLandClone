@@ -71,7 +71,8 @@
     height: 128px;
     display: flex;
     align-items: flex-start;
-    /* justify-content: center; */
+    justify-content: center;
+    margin-left: 10px;
     z-index: 2;
 }
 
@@ -192,7 +193,7 @@
     height: 34px;
     padding: 0 15px 0 45px;
     border: 0;
-    background: linear-gradient(180deg, #f6bd58 0%, #d88b25 100%);
+    background: linear-gradient(180deg, #fcccab 0%, #7a3f18 100%);
     color: #fff;
     font-size: 13px;
     font-weight: 900;
@@ -214,7 +215,7 @@
     transform: skewX(-25deg);
 }
 
-.highlight-icon {
+/* .highlight-icon {
     position: absolute;
     left: -6px;
     width: 40px;
@@ -225,7 +226,7 @@
         radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0 16%, transparent 17%),
         repeating-conic-gradient(from 0deg, #dfe9f6 0deg 12deg, #7d99bf 12deg 24deg);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-}
+} */
 
 /* Mobile header */
 
@@ -256,6 +257,7 @@
         width: 142px;
         height: 118px;
         display: block;
+        margin-left: 5px;
     }
 
     .mobile-logo img {

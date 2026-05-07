@@ -4,7 +4,7 @@ import { useData } from '../context/DataContext';
 import Button from '../components/Button';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 
-const NewsDetailPage = () => {
+const NewslettersDetailPage = () => {
     const { id } = useParams();
     const { news } = useData();
     const navigate = useNavigate();
@@ -191,4 +191,4 @@ const NewsDetailPage = () => {
     );
 };
 
-export default NewsDetailPage;
+export default NewslettersDetailPage;

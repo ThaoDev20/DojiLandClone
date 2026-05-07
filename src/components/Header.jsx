@@ -42,14 +42,18 @@ const Header = () => {
       {
         label: 'Truyền thông',
         href: '/tin-du-an',
-        children: [{ label: 'Tin tức', href: '/tin-du-an' }],
+        children: [
+          { label: 'Tin tức', href: '/tin-du-an' },
+          { label: 'Video', href: '/video-du-an' },
+          { label: 'Bản tin', href: '/ban-tin' }
+        ],
       },
       { label: 'Tuyển dụng', href: '/tuyen-dung' },
       { label: 'Liên hệ', href: '/lien-he' }
     );
 
     return baseMenu;
-  }, [projects]); 
+  }, [projects]);
 
   const isHomePage = location.pathname === '/';
   const shouldUseScrolledStyle = isScrolled || !isHomePage;
@@ -97,17 +101,8 @@ const Header = () => {
     <header className={`header ${shouldUseScrolledStyle ? 'scrolled' : ''}`}>
       <div className="header-desktop">
         <Link to="/" className="header-logo">
-          <img src={LOGO_URL} alt="Logo" />
+          <img src='Logo.png' alt="Logo" />
         </Link>
-
-        {
-          isHomePage && (
-            <div className="desktop-language">
-              <span>VI</span>
-              <ChevronDown size={14} />
-            </div>
-          )
-        }
 
         <nav className="desktop-nav">
           {menuItems.map((item, index) => (
@@ -146,7 +141,7 @@ const Header = () => {
 
       <div className="header-mobile">
         <Link to="/" className="mobile-logo">
-          <img src={LOGO_URL} alt="DOJILAND" />
+          <img src='Logo.png' alt="Logo" />
         </Link>
 
         <button type="button" className="mobile-menu-button" onClick={() => setIsMenuOpen(true)}>
@@ -156,13 +151,9 @@ const Header = () => {
 
       <div className={`mobile-menu-panel ${isMenuOpen ? 'active' : ''}`}>
         <div className="mobile-menu-top">
-          <button type="button" className="mobile-language">
-            VI
-            <ChevronDown size={15} />
-          </button>
 
           <Link to="/" className="mobile-panel-logo" onClick={closeMenu}>
-            <img src={LOGO_URL} alt="DOJILAND" />
+            <img src='Logo.png' alt="Logo" />
           </Link>
 
           <button type="button" className="mobile-close-button" onClick={closeMenu}>

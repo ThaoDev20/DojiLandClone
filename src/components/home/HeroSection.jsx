@@ -7,11 +7,11 @@ const slides = [
     alt: 'Việt Thắng Banner 1',
   },
   {
-    image: 'https://dojiland.vn/wp-content/uploads/2024/02/Banner-website.jpg',
+    image: 'https://i1-vnexpress.vnecdn.net/2026/05/07/A3-DN-1778120356-5188-1778120411.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=upHpQC54p0SwH2PLUDup7Q',
     alt: 'Việt Thắng Banner 2',
   },
   {
-    image: 'https://dojiland.vn/wp-content/uploads/2023/07/Group-4104.jpg',
+    image: 'https://i1-vnexpress.vnecdn.net/2026/05/07/TPCT-1778119312-8368-1778119407.png?w=680&h=0&q=100&dpr=1&fit=crop&s=NjjMBz92kjjZ_7m117GUbg',
     alt: 'Việt Thắng Banner 3',
   },
 ];

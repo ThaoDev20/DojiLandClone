@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import { MapPin, Mail, Phone } from 'lucide-react';
 
-const LOGO_FOOTER = '';
-const FOOTER_BG = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-bg.jpg';
 const FORM_DECOR_1 = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-decor3.png';
 const FORM_DECOR_2 = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/ft-decor2.png';
 
-const PHONE_ICON = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/phone.svg';
-const EMAIL_ICON = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/email.svg';
-const LOCATION_ICON = 'https://dojiland.vn/wp-content/themes/main/assets/images/common/location.svg';
 
 const footerMenu = [
   { label: 'Giới thiệu', href: '/gioi-thieu' },
@@ -47,12 +43,12 @@ const Footer = () => {
     <footer id="colophon" className="site-footer">
       <div
         className="footer-main"
-        style={{ backgroundImage: `url(${FOOTER_BG})` }}
+        style={{ backgroundColor:'#7a3f18' }}
       >
         <div className="footer-content">
           <div className="footer-left">
             <Link to="/" className="footer-logo">
-              <img src={LOGO_FOOTER} alt="Logo" />
+              <img src='Logo.png' alt="Logo" />
             </Link>
           </div>
 
@@ -73,17 +69,17 @@ const Footer = () => {
               <h3 className="footer-title">Liên hệ</h3>
 
               <p>
-                <img src={PHONE_ICON} alt="" />
+                <Phone />
                 {/* <a href="tel:02433662288">024 3366 2288</a> */}
               </p>
 
               <p>
-                <img src={EMAIL_ICON} alt="" />
+                <Mail />
                 <a href="mailto:cskh@dojiland.vn">vithacobg@gmail.com</a>
               </p>
 
               <p>
-                <img src={LOCATION_ICON} alt="" />
+                <MapPin />
                 <span>
                   Tòa nhà đa năng Việt Thắng, đường Hoàng Văn Thụ, Phường Xương Giang, Thành phố Bắc Giang, Tỉnh Bắc Giang, Việt Nam.
                 </span>

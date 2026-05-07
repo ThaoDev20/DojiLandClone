@@ -1,0 +1,346 @@
+.recruitment-page {
+    background: #f7f5f0;
+    margin-top: 5rem;
+}
+
+.recruitment-section {
+    position: relative;
+    padding: 40px 40px 70px;
+    background:
+        linear-gradient(rgba(247, 245, 240, 0.88), rgba(247, 245, 240, 0.88)),
+        url('/images/apply-marble-bg.jpg') center top / cover no-repeat;
+    overflow: hidden;
+}
+
+.recruitment-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.recruitment-title {
+    margin: 0 0 42px;
+    text-align: center;
+    color: #111;
+    font-family: 'Averta-Bold';
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.recruitment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.recruitment-card {
+    position: relative;
+    height: 455px;
+    overflow: hidden;
+    background: #111;
+}
+
+.recruitment-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.55s ease;
+}
+
+.recruitment-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.18) 0%,
+            rgba(0, 0, 0, 0.42) 48%,
+            rgba(0, 0, 0, 0.82) 100%);
+}
+
+.recruitment-content {
+    position: absolute;
+    left: 30px;
+    right: 26px;
+    bottom: 55px;
+    z-index: 2;
+    color: #fff;
+}
+
+.recruitment-content h3 {
+    max-width: 370px;
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.recruitment-content p {
+    max-width: 395px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+.recruitment-card:hover .recruitment-img {
+    transform: scale(1.06);
+}
+
+.apply-section {
+    position: relative;
+    min-height: 720px;
+    padding: 32px 20px 80px;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(249, 247, 242, 0.9), rgba(249, 247, 242, 0.9)),
+        url('/images/apply-marble-bg.jpg') center top / cover no-repeat;
+}
+
+.apply-bg-building {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 42%;
+    height: 48%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.2;
+    background: url('/images/contact-building-left.png') left bottom / contain no-repeat;
+}
+
+.apply-container {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.apply-title {
+    margin: 0 0 32px;
+    text-align: center;
+    color: #111;
+    font-family: 'Averta-Bold';
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.apply-group-title {
+    width: 460px;
+    margin: 0 0 14px auto;
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.apply-group-title-optional {
+    margin-top: 22px;
+}
+
+.apply-row {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 14px;
+}
+
+.apply-row>label {
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.apply-row>label span {
+    color: #c0392b;
+}
+
+.apply-row input,
+.apply-row select {
+    width: 100%;
+    height: 40px;
+    padding: 0 13px;
+    border: 1px solid #d7d7d7;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.82);
+    color: #555;
+    font-size: 16px;
+    font-family: 'Averta-Bold';
+    border-radius: 12px;
+}
+
+.apply-row select {
+    appearance: none;
+    cursor: pointer;
+    background-image:
+        linear-gradient(45deg, transparent 50%, #9b856d 50%),
+        linear-gradient(135deg, #9b856d 50%, transparent 50%);
+    background-position:
+        calc(100% - 17px) 13px,
+        calc(100% - 12px) 13px;
+    background-size: 5px 5px;
+    background-repeat: no-repeat;
+}
+
+.apply-radio-group {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    height: 32px;
+}
+
+.apply-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #111;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.apply-radio input {
+    width: 13px;
+    height: 13px;
+    margin: 0;
+    accent-color: #9b6d2f;
+}
+
+.apply-file-row {
+    align-items: start;
+}
+
+.apply-file-box {
+    width: 100%;
+}
+
+.apply-file-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid #d7d7d7;
+    background: rgba(255, 255, 255, 0.82);
+    color: #555;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.apply-file-input input {
+    display: none;
+}
+
+.apply-file-box p {
+    margin: 6px 0 0;
+    color: #111;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.apply-submit-wrap {
+    width: 460px;
+    margin-left: auto;
+    padding-top: 6px;
+    text-align: left;
+}
+
+.apply-submit {
+    min-width: 120px;
+    height: 40px;
+    border: 0;
+    cursor: pointer;
+    color: #5b3817;
+    background: linear-gradient(90deg, #e6c16d, #f6dc91, #d7a13f);
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+    box-shadow: inset 0 0 0 1px rgba(107, 75, 36, 0.45);
+}
+
+@media (max-width: 1100px) {
+    .recruitment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recruitment-card {
+        height: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+    .recruitment-section {
+        padding: 32px 18px 50px;
+    }
+
+    .recruitment-title {
+        font-size: 25px;
+        margin-bottom: 28px;
+    }
+
+    .recruitment-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .recruitment-card {
+        height: 360px;
+    }
+
+    .recruitment-content {
+        left: 22px;
+        right: 22px;
+        bottom: 34px;
+    }
+
+    .recruitment-content h3 {
+        font-size: 20px;
+    }
+
+    .recruitment-content p {
+        font-size: 13px;
+    }
+
+    .apply-section {
+        padding: 38px 18px 60px;
+    }
+
+    .apply-title {
+        font-size: 21px;
+        margin-bottom: 28px;
+    }
+
+    .apply-group-title,
+    .apply-submit-wrap {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .apply-row {
+        grid-template-columns: 1fr;
+        gap: 7px;
+        margin-bottom: 13px;
+    }
+
+    .apply-radio-group {
+        gap: 40px;
+    }
+
+    .apply-bg-building {
+        width: 100%;
+        height: 32%;
+    }
+}

@@ -20,6 +20,10 @@ const UrbanAreaPage = lazy(() => import('./pages/UrbanAreaPage'));
 const ResidentialRealEstatePage = lazy(() => import('./pages/ResidentialRealEstatePage'));
 const OfficeRealEstatePage = lazy(() => import('./pages/OfficeRealEstatePage'));
 const RecruitmentPage = lazy(() => import('./pages/RecruitmentPage'));
+const VideosPage = lazy(() => import('./pages/VideosPage'));
+const NewslettersPage = lazy(() => import('./pages/NewslettersPage'));
+const VideosDetailPage = lazy(() => import('./pages/VideosDetailPage'));
+const NewslettersDetailPage = lazy(() => import('./pages/NewslettersDetailPage'));
 
 
 // Loading component
@@ -63,12 +67,15 @@ function App() {
                 <Route path="/ban-lanh-dao" element={<Layout><BOD /></Layout>} />
                 <Route path="/gioi-thieu" element={<Layout><Introduce /></Layout>} />
                 <Route path="/tuyen-dung" element={<Layout><RecruitmentPage /></Layout>} />
-                <Route path="/tin-tuc/:id" element={<Layout><NewsDetailPage /></Layout>} />
+                <Route path="/tin-du-an/:id" element={<Layout><NewsDetailPage /></Layout>} />
                 <Route path="/bat-dong-san-nha-o" element={<Layout><ResidentialRealEstatePage /></Layout>} />
                 <Route path="/bat-dong-san-van-phong" element={<Layout><OfficeRealEstatePage /></Layout>} />
                 <Route path="/bat-dong-san-nghi-duong" element={<Layout><ResortRealEstatePage /></Layout>} />
                 <Route path="/khu-do-thi" element={<Layout><UrbanAreaPage /></Layout>} />
-
+                <Route path="/video-du-an" element={<Layout><VideosPage /></Layout>} />
+                <Route path="/ban-tin" element={<Layout><NewslettersPage /></Layout>} />
+                <Route path="/ban-tin/:id" element={<Layout><NewslettersDetailPage /></Layout>} />
+                <Route path="/video-du-an/:id" element={<Layout><VideosDetailPage /></Layout>} />
               </Routes>
             </Suspense>
             {/* <RegistrationModal /> */}

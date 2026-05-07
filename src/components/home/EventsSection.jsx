@@ -3,32 +3,32 @@ import './EventsSection.css';
 
 const events = [
   {
-    image: 'https://dojiland.vn/wp-content/uploads/2025/12/Bam-nut-khoi-cong.jpg',
-    href: 'https://dojiland.vn/tap-doan-doji-chinh-thuc-khoi-cong-du-an-voi-toa-thap-cao-75-tang/',
+    image: 'https://i1-vnexpress.vnecdn.net/2026/05/05/dai-lo-canh-quan-song-hong-jpe-5148-6620-1777976487.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=T9r2U5Y3-KvU-bEy56qBpQ',
+    href: '/tin-du-an',
   },
   {
-    image: 'https://dojiland.vn/wp-content/uploads/2025/12/Phoi-canh-2-toa.jpg',
-    href: 'https://dojiland.vn/4835-2/',
+    image: 'https://i1-kinhdoanh.vnecdn.net/2026/02/02/2-pho-i-ca-nh-1-1769989226-176-9352-3426-1769998192.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=i-fqa7zx3OCOLKMMivDw9Q',
+    href: '/tin-du-an',
   },
   {
-    image: 'https://dojiland.vn/wp-content/uploads/2025/10/DSC08380-scaled.jpg',
-    href: 'https://dojiland.vn/golden-crown-hai-phong-chinh-thuc-cat-noc-khang-dinh-vi-the-bieu-tuong-pho-cang/',
+    image: 'https://i1-vnexpress.vnecdn.net/2026/01/28/dji-20241120115806-0298-d-enha-4756-6871-1769585211.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=ErAYf5IMUe0iVdWlV5rOlA',
+    href: '/tin-du-an',
   },
     {
-    image: 'https://dojiland.vn/wp-content/uploads/2025/12/Phoi-canh-2-toa.jpg',
-    href: 'https://dojiland.vn/4835-2/',
+    image: 'https://i1-vnexpress.vnecdn.net/2026/05/05/DJI-0355-4649-1777959550.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=2Og3cbtdij_9zB6Kfgxu7g',
+    href: '/tin-du-an',
   },
   {
-    image: 'https://dojiland.vn/wp-content/uploads/2024/12/4.jpg',
-    href: 'https://dojiland.vn/dojiland-giu-vung-danh-hieu-nha-phat-trien-bat-dong-san-hang-sang-tot-nhat-dong-nam-a-2024/',
+    image: 'https://i1-vnexpress.vnecdn.net/2026/05/04/z7410100044853-ffe8f1fa6c9064b-4573-3145-1777880293.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=eqVg4ahY30NBvfpYmSFFhg',
+    href: '/tin-du-an',
   },
     {
-    image: 'https://dojiland.vn/wp-content/uploads/2025/12/Phoi-canh-2-toa.jpg',
-    href: 'https://dojiland.vn/4835-2/',
+    image: 'https://i1-vnexpress.vnecdn.net/2026/05/05/b7a4c4bbd4275e790736-175957805-9841-8646-1777956287.webp?w=680&h=0&q=100&dpr=1&fit=crop&s=r6doUnSPthiEVeZrUq_0QA',
+    href: '/tin-du-an',
   },
   {
-    image: 'https://dojiland.vn/wp-content/uploads/2024/06/Chung-nhan.jpg',
-    href: 'https://dojiland.vn/dojiland-dat-top-10-nha-phat-trien-bds-hang-dau-viet-nam-tai-bci-asia-awards-2024/',
+    image: 'https://i1-vnexpress.vnecdn.net/2026/05/07/A4-DN-1778120376-6623-1778120411.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=CJsQaSF3xizTGM5Ff5SyUw',
+    href: '/tin-du-an',
   },
 ];
 

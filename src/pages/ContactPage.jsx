@@ -1,32 +1,115 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import './ContactPage.css';
 
 const ContactPage = () => {
-    return (
-        <div className="contact-page" style={{marginTop:'100px' }}>
-            <div className="container section">
-                <h1 className="section-title" style={{ textAlign: 'center', marginBottom: '2rem' }}>Liên hệ với chúng tôi</h1>
+  const [form, setForm] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    content: '',
+  });
 
-                <div className="contact-info-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '4rem', textAlign: 'center' }}>
-                    <div className="info-box">
-                        <Phone size={48} color="var(--primary-color)" style={{ marginBottom: '1rem' }} />
-                        <h3>Hotline</h3>
-                        <p className="text-large" style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--primary-color)' }}></p>
-                    </div>
-                    <div className="info-box">
-                        <Mail size={48} color="var(--primary-color)" style={{ marginBottom: '1rem' }} />
-                        <h3>Email</h3>
-                        <p>vithacobg@gmail.com</p>
-                    </div>
-                    <div className="info-box">
-                        <MapPin size={48} color="var(--primary-color)" style={{ marginBottom: '1rem' }} />
-                        <h3>Văn phòng</h3>
-                        <p>Tòa nhà đa năng Việt Thắng, đường Hoàng Văn Thụ, Phường Xương Giang, Thành phố Bắc Giang, Tỉnh Bắc Giang</p>
-                    </div>
-                </div>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log('Contact form:', form);
+  };
+
+  return (
+    <section className="contact-page">
+      <div className="contact-bg-left" />
+      <div className="contact-bg-right" />
+
+      <div className="contact-wrapper">
+        <div className="contact-info">
+          <h1 className="contact-title">
+            CÔNG TY TNHH VIỆT THẮNG
+          </h1>
+
+          <div className="contact-list">
+            <div className="contact-item">
+              <Phone className="contact-icon" size={22} strokeWidth={1.8} />
+              <div className="contact-label">Điện thoại:</div>
+              <div className="contact-value">024 3366 2288</div>
             </div>
+
+            <div className="contact-item">
+              <Mail className="contact-icon" size={22} strokeWidth={1.8} />
+              <div className="contact-label">Email:</div>
+              <div className="contact-value">vithacobg@gmail.com</div>
+            </div>
+
+            <div className="contact-item contact-address">
+              <MapPin className="contact-icon" size={22} strokeWidth={1.8} />
+              <div className="contact-label">Địa chỉ:</div>
+              <div className="contact-value">
+                Tòa nhà đa năng Việt Thắng, đường Hoàng Văn Thụ, Phường Xương Giang, Thành phố Bắc Giang, Tỉnh Bắc Giang, Việt Nam.
+              </div>
+            </div>
+          </div>
         </div>
-    );
+
+        <div className="contact-form-box">
+          <p className="contact-desc">
+            Để biết thêm nhiều thông tin hữu ích, Quý khách hàng vui lòng liên hệ
+            với Việt Thắng qua điện thoại, email hoặc điền vào mẫu thông tin bên dưới.
+            <br />
+            Trân trọng cảm ơn!
+          </p>
+
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Họ và tên*"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Số điện thoại*"
+              value={form.phone}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={handleChange}
+            />
+
+            <textarea
+              name="content"
+              placeholder="Nội dung"
+              value={form.content}
+              onChange={handleChange}
+              rows={5}
+            />
+
+            <button type="submit" className="contact-submit">
+              GỬI THÔNG TIN
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default ContactPage;
