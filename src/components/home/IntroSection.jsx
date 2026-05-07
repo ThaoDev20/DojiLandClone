@@ -61,7 +61,7 @@ const IntroSection = () => {
               alt=""
             />
 
-            <a href="https://doji.vn/" target="_blank" rel="noreferrer">
+            <a href="/" target="_blank" rel="noreferrer">
               <span>Công ty TNHH Việt Thắng</span>
               {/* <img
                 src="https://dojiland.vn/wp-content/themes/main/assets/images/common/logo.png"

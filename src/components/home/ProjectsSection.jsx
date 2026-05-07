@@ -201,7 +201,7 @@ function ProjectsSection() {
       </div>
 
       <div className="projects-view-all">
-        <a href="/project_category/bat-dong-san-nha-o/">
+        <a href="#">
           <img
             src="https://dojiland.vn/wp-content/themes/main/assets/images/common/img-btn-large.png"
             alt=""

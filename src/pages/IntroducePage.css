@@ -1,0 +1,85 @@
+.introduce-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f5f0;
+  color: #20242a;
+  margin-top: 8rem;
+}
+
+.introduce-section {
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px 80px;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(210, 220, 220, 0.5) 0%, rgba(247, 245, 240, 0) 42%),
+    #f7f5f0;
+}
+
+.introduce-container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.introduce-title {
+  max-width: 980px;
+  margin: 0 auto 42px;
+  padding-top: 4px;
+  text-align: center;
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+.introduce-content {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.introduce-content p {
+  margin: 0 0 36px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 1.1px;
+  color: #343a40;
+}
+
+.introduce-content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .introduce-title {
+    letter-spacing: 4px;
+  }
+
+  .introduce-content p {
+    font-size: 20px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 576px) {
+  .introduce-section {
+    padding: 24px 16px 56px;
+  }
+
+  .introduce-title {
+    margin-bottom: 28px;
+    font-size: 26px;
+    letter-spacing: 2px;
+  }
+
+  .introduce-content p {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+  }
+}

@@ -13,7 +13,7 @@ const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const NewsDetailPage = lazy(() => import('./pages/NewsDetailPage'));
 const NewsPage = lazy(() => import('./pages/NewsPage'));
-const Introduce = lazy(() => import('./pages/Introduce'));
+const IntroducePage = lazy(() => import('./pages/IntroducePage'));
 const BOD = lazy(() => import('./pages/BOD'));
 const ResortRealEstatePage = lazy(() => import('./pages/ResortRealEstatePage'));
 const UrbanAreaPage = lazy(() => import('./pages/UrbanAreaPage'));
@@ -65,7 +65,7 @@ function App() {
                 <Route path="/lien-he" element={<Layout><ContactPage /></Layout>} />
                 <Route path="/tin-du-an" element={<Layout><NewsPage /></Layout>} />
                 <Route path="/ban-lanh-dao" element={<Layout><BOD /></Layout>} />
-                <Route path="/gioi-thieu" element={<Layout><Introduce /></Layout>} />
+                <Route path="/gioi-thieu" element={<Layout><IntroducePage /></Layout>} />
                 <Route path="/tuyen-dung" element={<Layout><RecruitmentPage /></Layout>} />
                 <Route path="/tin-du-an/:id" element={<Layout><NewsDetailPage /></Layout>} />
                 <Route path="/bat-dong-san-nha-o" element={<Layout><ResidentialRealEstatePage /></Layout>} />
