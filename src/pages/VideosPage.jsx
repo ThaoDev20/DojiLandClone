@@ -53,10 +53,8 @@ const VideosPage = () => {
                             <div className="news-featured-content">
                                 <div>
                                     <h2>{news[0].title}</h2>
-                                    <p>{truncateText(news[0].content, 150)}</p>
-                                </div>
-                                <div>
                                     <span>{formatNewsDate(news[0].date)}</span>
+                                    <p>{truncateText(news[0].content, 150)}</p>
                                 </div>
                             </div>
                         </Link>
@@ -77,8 +75,8 @@ const VideosPage = () => {
 
                                     <div className="news-normal-content">
                                         <h3>{item.title}</h3>
-                                        <p>{truncateText(item.content, 150)}</p>
                                         <span>{formatNewsDate(item.date)}</span>
+                                        <p>{truncateText(item.content, 150)}</p>
                                     </div>
                                 </Link>
                             ))}
@@ -155,7 +153,7 @@ const VideosPage = () => {
         .news-featured-content span,
         .news-normal-content span {
           display: block;
-          margin-top: 110px;
+          margin-bottom: 10px;
           font-size: 14px;
           color: #777;
         }
@@ -188,7 +186,7 @@ const VideosPage = () => {
         }
 
         .news-normal-content span {
-          margin-top: 90px;
+          margin-bottom: 10px;
         }
 
         .news-featured-row:hover h2,

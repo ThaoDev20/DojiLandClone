@@ -53,7 +53,7 @@ const ContactPage = () => {
               <MapPin className="contact-icon" size={22} strokeWidth={1.8} />
               <div className="contact-label">Địa chỉ:</div>
               <div className="contact-value">
-                Tòa nhà đa năng Việt Thắng, đường Hoàng Văn Thụ, Phường Xương Giang, Thành phố Bắc Giang, Tỉnh Bắc Giang, Việt Nam.
+                Tòa nhà đa năng Việt Thắng, đường Hoàng Văn Thụ, phường Bắc Giang, tỉnh Bắc Ninh.
               </div>
             </div>
           </div>

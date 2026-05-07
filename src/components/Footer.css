@@ -6,8 +6,8 @@
 .footer-main {
   position: relative;
   width: 100%;
-  min-height: 430px;
-  padding: 78px 0 78px;
+  min-height: 360px;
+  padding: 58px 0 70px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -18,18 +18,19 @@
 .footer-content {
   position: relative;
   z-index: 2;
-  width: min(1400px, calc(100% - 96px));
+  width: min(1320px, calc(100% - 96px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 300px 560px 1fr;
+  grid-template-columns: 260px 500px 1fr;
   align-items: flex-start;
-  gap: 70px;
+  gap: 64px;
 }
 
 .footer-left {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 4px;
 }
 
 .footer-logo {
@@ -37,19 +38,19 @@
 }
 
 .footer-logo img {
-  width: 230px;
+  width: 235px;
   height: auto;
   display: block;
 }
 
 .footer-center {
   display: grid;
-  grid-template-columns: 210px 1fr;
-  gap: 86px;
+  grid-template-columns: 170px 1fr;
+  gap: 64px;
 }
 
 .footer-title {
-  margin: 0 0 22px;
+  margin: 0 0 24px;
   color: #d79b31;
   font-size: 17px;
   font-weight: 900;
@@ -65,16 +66,16 @@
 }
 
 .footer-menu li {
-  margin-bottom: 19px;
+  margin-bottom: 17px;
 }
 
 .footer-menu a,
 .footer-contact a,
 .footer-contact span {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
-  line-height: 1.45;
+  line-height: 1.5;
   text-decoration: none;
 }
 
@@ -91,32 +92,36 @@
   display: grid;
   grid-template-columns: 22px 1fr;
   align-items: flex-start;
-  gap: 18px;
-  margin: 0 0 20px;
+  gap: 16px;
+  margin: 0 0 18px;
 }
 
 .footer-contact img {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   margin-top: 5px;
   display: block;
 }
 
 .footer-right {
-  padding-top: 0;
+  justify-self: end;
+  width: 100%;
+  max-width: 480px;
+  padding-top: 2px;
 }
 
 .footer-notice {
-  margin: 0 0 28px;
+  margin: 0 0 26px;
   color: #fff;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 900;
   line-height: 1.35;
+  text-align: left;
 }
 
 .footer-form {
   position: relative;
-  width: 424px;
+  width: 430px;
   max-width: 100%;
   height: 40px;
   display: flex;
@@ -127,8 +132,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  width: 424px;
-  max-width: 100%;
+  width: 100%;
   height: 40px;
   object-fit: fill;
   pointer-events: none;
@@ -139,7 +143,7 @@
   top: 4px;
   right: 0;
   z-index: 1;
-  width: 200px;
+  width: 190px;
   height: 32px;
   object-fit: fill;
   pointer-events: none;
@@ -148,14 +152,14 @@
 .footer-form input {
   position: relative;
   z-index: 2;
-  width: calc(100% - 128px);
+  width: calc(100% - 130px);
   height: 40px;
   padding: 0 18px 0 24px;
   border: 0;
   outline: none;
   background: transparent;
   color: #333;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -166,14 +170,14 @@
 .footer-form button {
   position: absolute;
   top: 0;
-  right: 22px;
+  right: 18px;
   z-index: 3;
-  width: 94px;
+  width: 92px;
   height: 40px;
   border: 0;
   background: transparent;
   color: #75431f;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
@@ -188,13 +192,13 @@
 
 .footer-copyright {
   color: #f4a51c;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 800;
   line-height: 1.4;
 }
 
 .footer-copyright-desktop {
-  margin: 46px 0 0;
+  margin: 42px 0 0;
 }
 
 .footer-copyright-mobile {
@@ -208,19 +212,21 @@
   bottom: 0;
   z-index: 1;
   width: 100%;
-  height: 56px;
+  height: 48px;
   object-fit: cover;
   display: block;
 }
 
 @media (max-width: 1280px) {
   .footer-content {
-    grid-template-columns: 240px 470px 1fr;
+    width: min(1120px, calc(100% - 72px));
+    grid-template-columns: 220px 430px 1fr;
     gap: 42px;
   }
 
   .footer-center {
-    gap: 48px;
+    grid-template-columns: 150px 1fr;
+    gap: 42px;
   }
 
   .footer-logo img {
@@ -233,8 +239,12 @@
     font-size: 16px;
   }
 
+  .footer-right {
+    max-width: 420px;
+  }
+
   .footer-form {
-    width: 500px;
+    width: 100%;
   }
 }
 
@@ -263,6 +273,7 @@
   }
 
   .footer-right {
+    justify-self: start;
     max-width: 580px;
   }
 
@@ -323,7 +334,7 @@
   .footer-form-decor-2 {
     top: 4px;
     right: 0;
-    width: 210px;
+    width: 190px;
     height: 32px;
   }
 

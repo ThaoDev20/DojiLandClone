@@ -81,7 +81,7 @@ const Footer = () => {
               <p>
                 <MapPin />
                 <span>
-                  Tòa nhà đa năng Việt Thắng, đường Hoàng Văn Thụ, Phường Xương Giang, Thành phố Bắc Giang, Tỉnh Bắc Giang, Việt Nam.
+                  Tòa nhà đa năng Việt Thắng, đường Hoàng Văn Thụ, phường Bắc Giang, tỉnh Bắc Ninh.
                 </span>
               </p>
             </div>

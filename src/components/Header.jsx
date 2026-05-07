@@ -133,7 +133,7 @@ const Header = () => {
               onClick={() => goToHash(item.hash)}
             >
               <span className="highlight-icon" />
-              <span>{item.label}</span>
+              <span className="highlight-label">{item.label}</span>
             </button>
           ))}
         </div>

@@ -234,7 +234,6 @@ export const DataProvider = ({ children }) => {
         }
     };
 
-    console.log('data', data);
 
     return (
         <DataContext.Provider value={{
