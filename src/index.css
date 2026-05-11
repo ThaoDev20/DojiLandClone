@@ -1,3 +1,12 @@
+/* 1. Khai báo Font chữ */
+@font-face {
+  font-family: 'Albra-Sans';
+  src: url('./assets/fonts/AlbraSansTRIAL-Semi.otf') format('opentype');
+  font-weight: 600; /* Vì đây là bản Semi nên đặt 600 là chuẩn nhất */
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Colors - Trustworthy Blue & Growth Green */
   --primary-color: #0056b3; /* Deep Blue */
@@ -13,7 +22,7 @@
   --border-color: #e9ecef;
 
   /* Typography */
-  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family: 'Albra-Sans', 'Inter', system-ui, -apple-system, sans-serif !important;
   --font-size-base: 16px;
   --font-size-h1: 2.5rem;
   --font-size-h2: 2rem;
@@ -51,6 +60,8 @@ body {
   background-color: var(--bg-body);
   color: var(--text-primary);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Giúp font hiển thị mịn hơn trên Mac/Chrome */
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -77,4 +88,16 @@ button {
 
 .section {
   padding: var(--spacing-xl) 0;
+}
+
+*, 
+*::before, 
+*::after,
+input, 
+button, 
+textarea, 
+select {
+    font-family: 'Albra-Sans', 'Inter', system-ui, -apple-system, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
