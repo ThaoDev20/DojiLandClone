@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import './ProjectsSection.css';
 import { useData } from '../../context/DataContext';
+import { Link } from 'react-router-dom';
 
 const ProjectSection = () => {
   const { projects: projects2 } = useData();
