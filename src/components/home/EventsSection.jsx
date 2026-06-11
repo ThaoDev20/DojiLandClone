@@ -117,20 +117,20 @@ const NewsEvents = () => {
         )}
 
         <article className="news-events-main">
-          <a href={getNewsHref(activeItem)} className="news-events-image">
+          <Link to={getNewsHref(activeItem)} className="news-events-image">
             <img src={getNewsImage(activeItem)} alt={activeItem.title} />
-          </a>
+          </Link>
 
           <h3 className="news-events-name">
-            <a href={getNewsHref(activeItem)}>{activeItem.title}</a>
+            <Link to={getNewsHref(activeItem)}>{activeItem.title}</Link>
           </h3>
         </article>
 
         {nextItem && total > 1 && (
           <div className="news-events-side news-events-side-right">
-            <a href={getNewsHref(nextItem)} className="news-events-image">
+            <Link to={getNewsHref(nextItem)} className="news-events-image">
               <img src={getNewsImage(nextItem)} alt={nextItem.title} />
-            </a>
+            </Link>
 
             <button
               type="button"
