@@ -91,7 +91,7 @@ const NewsEvents = () => {
 
       <div className="news-events-container">
         <h2 className="news-events-title">
-          <Link href="/tin-du-an">
+          <Link to="/tin-du-an/">
             <span>TIN TỨC &</span>
             <span>SỰ KIỆN</span>
           </Link>
@@ -101,7 +101,7 @@ const NewsEvents = () => {
       <div className="news-events-slider" key={safeActiveIndex}>
         {prevItem && total > 1 && (
           <div className="news-events-side news-events-side-left">
-            <Link href={getNewsHref(prevItem)} className="news-events-image">
+            <Link to={getNewsHref(prevItem)} className="news-events-image">
               <img src={getNewsImage(prevItem)} alt={prevItem.title} />
             </Link>
 
