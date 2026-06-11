@@ -42,7 +42,7 @@ const VideosPage = () => {
 
                 {news && news.length > 0 ? (
                     <div className="news-list-layout">
-                        <Link to={`/tin-tuc/${news[0].id}`} className="news-featured-row">
+                        <Link to={`/tin-du-an/${news[0].id}`} className="news-featured-row">
                             <div className="news-featured-image">
                                 <img
                                     src={news[0].image || "https://placehold.co/800x500"}
@@ -62,7 +62,7 @@ const VideosPage = () => {
                         <div className="news-normal-list">
                             {news.slice(1).map((item) => (
                                 <Link
-                                    to={`/tin-tuc/${item.id}`}
+                                    to={`/tin-du-an/${item.id}`}
                                     key={item.id}
                                     className="news-normal-row"
                                 >

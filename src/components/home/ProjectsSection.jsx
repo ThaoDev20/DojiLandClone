@@ -1,216 +1,89 @@
-import { useEffect, useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
+import React, { useEffect, useMemo, useRef } from 'react';
 import './ProjectsSection.css';
+import { useData } from '../../context/DataContext';
 
-const projects = [
-  {
-    number: '01',
-    title: 'Dự án Demo 1',
-    href: '#',
-    thumbnail: 'https://i1-vnexpress.vnecdn.net/2026/05/06/dji-jpg-jpeg-1778056884-3667-1778057333.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=R5cMN8nrxOeg7IM5Tz1OjQ',
-    excerpt: '',
-  },
-  {
-    number: '02',
-    title: 'Dự án Demo 2',
-    href: '#',
-    thumbnail:
-      'https://i1-vnexpress.vnecdn.net/2026/05/01/1-1777602070.jpg?w=1200&h=0&q=100&dpr=2&fit=crop&s=H_pnWupI71TeLEMNX9hBSw',
-    excerpt: '',
-  },
-  {
-    number: '03',
-    title: 'Dự án Demo 3',
-    href: '#',
-    thumbnail: 'https://i1-vnexpress.vnecdn.net/2026/05/01/5-1777602078.jpg?w=1200&h=0&q=100&dpr=2&fit=crop&s=kWRaCQhcNKvlnHjlJSNqFQ',
-    excerpt:
-      'Dự án Demo 3 là một dự án tọa lạc tại giao lộ ...',
-  },
-  {
-    number: '04',
-    title: 'Dự án Demo 4',
-    href: '#',
-    thumbnail:
-      'https://i1-vnexpress.vnecdn.net/2026/05/05/smartcity-1777962773-8386-1777963176.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=Rb3dtH6EYmJsUYKmFnu6SQ',
-    excerpt:
-      'Dự án Demo 4 là quần thể dinh thự mặt biển hạng đầu tiên tại thành phố ...',
-  },
-  {
-    number: '05',
-    title: 'Dự án Demo 5',
-    href: '#',
-    thumbnail: 'https://dojiland.vn/wp-content/uploads/2023/07/TT1.jpeg',
-    excerpt:
-      'Nằm ngay bên bờ biển trong lòng kỳ quan thiên nhiên thế giới Vịnh Hạ Long, Dự án Demo 5 là khu đô thị Hạng A đẳng cấp Quốc tế đầu tiên tại Quảng Ninh.',
-  },
-];
+const ProjectSection = () => {
+  const { projects: projects2 } = useData();
+  const itemRefs = useRef([]);
 
-function ProjectsSection() {
-  const swiperRef = useRef(null);
-  const paginationRef = useRef(null);
-  const sectionRef  = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  console.log('projects2', projects2);
 
-  const getProject = (startIndex, offset) => {
-    return projects[(startIndex + offset) % projects.length];
-  };
+  const projects = useMemo(() => {
+    return (projects2 || []).filter((item) => item.isVisible !== false);
+  }, [projects2]);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(section);
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('project-feature-visible');
+          }
+        });
       },
       {
         threshold: 0.25,
       }
     );
 
-    observer.observe(section);
+    itemRefs.current.forEach((item) => {
+      if (item) observer.observe(item);
+    });
 
     return () => observer.disconnect();
-  }, []);
+  }, [projects]);
 
-  const pages = projects.map((_, index) => [
-    getProject(index, 0),
-    getProject(index, 1),
-    getProject(index, 2),
-  ]);
-
-  const initSwiperControls = (swiper) => {
-    swiperRef.current = swiper;
-
-    setTimeout(() => {
-      if (!paginationRef.current) return;
-
-      swiper.params.pagination.el = paginationRef.current;
-
-      swiper.pagination.destroy();
-      swiper.pagination.init();
-      swiper.pagination.render();
-      swiper.pagination.update();
-    });
-  };
+  if (!projects.length) return null;
 
   return (
-    <section
-      ref={sectionRef}
-      className={`projects-highlight ${isVisible ? 'is-visible' : ''}`}
-      id="projects_highlight"
-    >
+    <section className="project-feature-section">
+      {projects.map((project, index) => {
+        const layoutClass =
+          index === 0
+            ? 'project-feature-first'
+            : index % 2 === 1
+              ? 'project-feature-image-right'
+              : 'project-feature-image-left';
 
-      <h2 className="projects-title">Các dự án Nổi bật</h2>
-
-      <div className="projects-content">
-        <Swiper
-          modules={[Pagination]}
-          className="projects-swiper"
-          loop
-          speed={700}
-          slidesPerView={1}
-          spaceBetween={0}
-          pagination={{
-            type: 'fraction',
-          }}
-          onSwiper={initSwiperControls}
-        >
-          {pages.map((page, pageIndex) => (
-            <SwiperSlide className="project-page-slide" key={pageIndex}>
-              <div className="projects-page">
-                {page.map((project, index) => (
-                  <div
-                    className={`project-item ${index === 0 ? 'is-active' : 'is-normal'
-                      }`}
-                    key={`${pageIndex}-${project.number}`}
-                  >
-                    <a href={project.href} className="project-card">
-                      <img
-                        className="project-decor"
-                        src="https://dojiland.vn/wp-content/themes/main/assets/images/common/s5-decor3.png"
-                        alt=""
-                      />
-
-                      <img
-                        className="project-thumbnail"
-                        src={project.thumbnail}
-                        alt={project.title}
-                      />
-
-                      <div className="project-intro">
-                        <div className="project-number-row">
-                          <p className="project-number">{project.number}</p>
-                        </div>
-
-                        <h3 className="project-name">{project.title}</h3>
-
-                        {project.excerpt && (
-                          <p className="project-excerpt">{project.excerpt}</p>
-                        )}
-
-                        <div className="project-more">
-                          <img
-                            className="project-more-icon"
-                            src="https://dojiland.vn/wp-content/themes/main/assets/images/common/icon_load_more.png"
-                            alt=""
-                          />
-                          <span>Xem chi tiết</span>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <div className="project-slide-button">
-          <button
-            className="project-nav-btn"
-            type="button"
-            onClick={() => swiperRef.current?.slidePrev()}
+        return (
+          <article
+            key={project.id || project.slug || index}
+            ref={(el) => {
+              itemRefs.current[index] = el;
+            }}
+            className={`project-feature-card ${layoutClass}`}
           >
-            <img
-              src="https://dojiland.vn/wp-content/themes/main/assets/images/common/btn-slide-prev.png"
-              alt="Previous"
-            />
-          </button>
+            <div className="project-feature-image-wrap">
+              <img
+                src={project.image || project.projectImages?.[0]}
+                alt={project.name}
+                className="project-feature-image"
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+            </div>
 
-          <div ref={paginationRef} className="project-pagination" />
+            <div className="project-feature-content">
+              <p className="project-feature-status">{project.statusLabel}</p>
 
-          <button
-            className="project-nav-btn"
-            type="button"
-            onClick={() => swiperRef.current?.slideNext()}
-          >
-            <img
-              src="https://dojiland.vn/wp-content/themes/main/assets/images/common/btn-slide-next.png"
-              alt="Next"
-            />
-          </button>
-        </div>
-      </div>
+              <h2>{project.name}</h2>
 
-      <div className="projects-view-all">
-        <a href="#">
-          <img
-            src="https://dojiland.vn/wp-content/themes/main/assets/images/common/img-btn-large.png"
-            alt=""
-          />
-          <span>Xem tất cả dự án</span>
-        </a>
-      </div>
+              <div className="project-feature-line" />
+
+              <p className="project-feature-desc">
+                {project.description ||
+                  `${project.location || ''}${project.area ? ` · ${project.area}` : ''}${project.price ? ` · ${project.price}` : ''
+                  }`}
+              </p>
+
+              <a href={`/du-an/${project.slug}`} className="project-feature-button">
+                XEM THÊM
+              </a>
+            </div>
+          </article>
+        );
+      })}
     </section>
   );
-}
+};
 
-export default ProjectsSection;
+export default ProjectSection;

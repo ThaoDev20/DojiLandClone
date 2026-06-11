@@ -43,7 +43,7 @@ const Footer = () => {
     <footer id="colophon" className="site-footer">
       <div
         className="footer-main"
-        style={{ backgroundColor:'#7a3f18' }}
+        style={{ backgroundColor:'#62813b' }}
       >
         <div className="footer-content">
           <div className="footer-left">

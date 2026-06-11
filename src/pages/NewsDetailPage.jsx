@@ -66,7 +66,7 @@ const NewsDetailPage = () => {
                     <h3>Tin tức khác</h3>
                     <div className="sidebar-list">
                         {news.filter(n => n.id !== newsItem.id).slice(0, 5).map(item => (
-                            <Link to={`/tin-tuc/${item.id}`} key={item.id} className="sidebar-item">
+                            <Link to={`/tin-du-an/${item.id}`} key={item.id} className="sidebar-item">
                                 <div className="sidebar-item-image">
                                     <img src={item.image || 'https://via.placeholder.com/100'} alt={item.title} />
                                 </div>

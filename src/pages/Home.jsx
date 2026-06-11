@@ -3,15 +3,17 @@ import EcosystemSection from '../components/home/EcosystemSection';
 import IntroSection from '../components/home/IntroSection';
 import EventsSection from '../components/home/EventsSection';
 import ProjectsSection from '../components/home/ProjectsSection';
+import MediaGallery from './MediaGallery';
 
 const Home = () => {
     return (
         <div className="home-page">
             <HeroSection />
-            <IntroSection />
-            <EventsSection />
             <ProjectsSection />
-            <EcosystemSection />
+            {/* <IntroSection /> */}
+            <EventsSection />
+            <MediaGallery/>
+            {/* <EcosystemSection /> */}
         </div>
     );
 };

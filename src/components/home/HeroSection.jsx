@@ -29,18 +29,20 @@ const HeroSection = () => {
 
   return (
     <section className="hero-slider">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`hero-slide ${index === activeIndex ? 'active' : ''}`}
-        >
-          <img
-            src={slide.image}
-            alt={slide.alt}
-            className="hero-slide-img"
-          />
-        </div>
-      ))}
+      <div
+        className="hero-track"
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      >
+        {slides.map((slide, index) => (
+          <div className="hero-slide" key={index}>
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              className="hero-slide-img"
+            />
+          </div>
+        ))}
+      </div>
 
       <div className="hero-dots">
         {slides.map((_, index) => (
