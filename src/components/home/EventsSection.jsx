@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './EventsSection.css';
 import { useData } from '../../context/DataContext';
+import { Link } from 'react-router-dom';
 
 const getNewsImage = (item) => {
   return item?.image || item?.thumbnail || '';
@@ -90,19 +91,19 @@ const NewsEvents = () => {
 
       <div className="news-events-container">
         <h2 className="news-events-title">
-          <a href="/news.html">
+          <Link href="/tin-du-an">
             <span>TIN TỨC &</span>
             <span>SỰ KIỆN</span>
-          </a>
+          </Link>
         </h2>
       </div>
 
       <div className="news-events-slider" key={safeActiveIndex}>
         {prevItem && total > 1 && (
           <div className="news-events-side news-events-side-left">
-            <a href={getNewsHref(prevItem)} className="news-events-image">
+            <Link href={getNewsHref(prevItem)} className="news-events-image">
               <img src={getNewsImage(prevItem)} alt={prevItem.title} />
-            </a>
+            </Link>
 
             <button
               type="button"

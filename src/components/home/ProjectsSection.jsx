@@ -75,9 +75,9 @@ const ProjectSection = () => {
                   }`}
               </p>
 
-              <a href={`/du-an/${project.slug}`} className="project-feature-button">
+              <Link href={`/du-an/${project.slug}`} className="project-feature-button">
                 XEM THÊM
-              </a>
+              </Link>
             </div>
           </article>
         );
