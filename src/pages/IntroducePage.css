@@ -1,88 +1,25 @@
-.eco-overview-page {
+.group-page {
   width: 100%;
   background: #f7f3ea;
-  color: #fff;
+  color: #263927;
 }
 
-.eco-overview-page * {
+.group-page * {
   box-sizing: border-box;
 }
 
-/* ===== HERO + FLOATING INTRO CARD ===== */
+.group-container {
+  max-width: 1318px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
 
-.eco-overview-hero {
+/* ===== HERO ===== */
+
+.group-hero {
   position: relative;
   width: 100%;
-  height: 640px;
-  margin-bottom: 230px;
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.eco-overview-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.18);
-}
-
-.eco-intro-card {
-  position: absolute;
-  left: 50%;
-  bottom: -170px;
-  z-index: 3;
-  transform: translateX(-50%);
-
-  width: min(1048px, calc(100% - 40px));
-  min-height: 356px;
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.eco-intro-card-overlay {
-  width: 100%;
-  min-height: 356px;
-  padding: 42px 60px 36px;
-
-  background: rgba(45, 76, 56, 0.86);
-}
-
-.eco-intro-card h2 {
-  margin: 0 0 30px;
-
-  color: #fff;
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1.45;
-  letter-spacing: 3px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.eco-intro-card h2 span {
-  display: block;
-}
-
-.eco-intro-card p {
-  margin: 0 0 16px;
-
-  color: #fff;
-  font-family: "Times New Roman", serif;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.55;
-}
-
-/* ===== PHILOSOPHY 5E ===== */
-
-.eco-philosophy {
-  position: relative;
-  min-height: 345px;
+  height: 560px;
 
   background-position: center;
   background-size: cover;
@@ -93,94 +30,112 @@
   justify-content: center;
 }
 
-.eco-philosophy::before {
+.group-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(34, 68, 45, 0.68);
+  background: rgba(0, 0, 0, 0.45);
 }
 
-.eco-philosophy-content {
+.group-hero h1 {
   position: relative;
   z-index: 1;
-
-  max-width: 1060px;
-  padding: 70px 30px;
-  text-align: left;
-}
-
-.eco-philosophy h2 {
-  margin: 0 0 24px;
+  margin: 0;
 
   color: #fff;
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 300;
   line-height: 1.2;
+  letter-spacing: 8px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.group-hero h1 strong {
+  display: block;
+  margin-top: 6px;
+
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+/* ===== INTRO TEXT ===== */
+
+.group-intro {
+  padding: 52px 0 26px;
+}
+
+.group-main-title {
+  margin: 0 0 28px;
+
+  color: #344432;
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.25;
   letter-spacing: 7px;
   text-align: center;
   text-transform: uppercase;
 }
 
-.eco-philosophy h2 strong {
+.group-main-title strong {
   font-weight: 800;
 }
 
-.eco-philosophy p {
-  margin: 0 auto 12px;
+.group-intro p,
+.group-split-content p {
+  margin: 0 0 18px;
 
-  color: #fff;
+  color: #111;
   font-family: "Times New Roman", serif;
   font-size: 17px;
-  font-weight: 700;
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
-/* ===== 5E BLOCKS ===== */
-
-.eco-five-e {
-  padding: 80px 20px;
-  background: #f7f3ea;
-  color: #263927;
+.group-split-content strong {
+  font-weight: 800;
 }
 
-.eco-e-block {
-  max-width: 1180px;
-  margin: 0 auto 70px;
+/* ===== SPLIT SECTIONS ===== */
+
+.group-split {
+  width: 100%;
+  max-width: 1318px;
+  margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 56px;
+  grid-template-columns: 1.06fr 0.94fr;
   align-items: center;
+  gap: 28px;
+
+  padding: 16px 22px 0;
 }
 
-.eco-e-block:last-child {
-  margin-bottom: 0;
+.group-split-reverse {
+  grid-template-columns: 0.94fr 1.06fr;
 }
 
-.eco-e-block.is-reverse .eco-e-image {
-  order: 2;
-}
-
-.eco-e-block.is-reverse .eco-e-content {
-  order: 1;
-}
-
-.eco-e-image {
-  height: 360px;
+.group-split-image {
+  width: 100%;
+  height: 560px;
   overflow: hidden;
+  background: #eee8dd;
 }
 
-.eco-e-image img {
+.group-split-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-/* Title dạng: Emotion (Cảm xúc) */
+.group-split-content {
+  padding: 0 52px;
+}
 
-.eco-e-content h3 {
-  margin: 0 0 22px;
+.group-split-content h2 {
+  margin: 0 0 24px;
 
   color: #344432;
   font-size: 34px;
@@ -190,163 +145,170 @@
   text-transform: uppercase;
 }
 
-.eco-e-subtitle {
-  color: #344432;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 3px;
+.group-split-content h2:not(:first-child) {
+  margin-top: 36px;
 }
 
-.eco-e-text {
-  display: block;
+/* ===== SCROLL UP EFFECT ===== */
 
-  color: #222;
-  font-family: "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.eco-e-text + .eco-e-text {
-  margin-top: 14px;
-}
-
-/* ===== REVEAL UP ANIMATION ===== */
-
-.reveal-up {
+.group-reveal {
   opacity: 0;
   transform: translateY(70px);
-
   transition:
     opacity 0.75s ease,
     transform 0.75s ease;
 }
 
-.reveal-up.is-visible {
+.group-reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ===== TABLET / MOBILE ===== */
+/* ===== FLIP EFFECT FOR CORE + AWARDS IMAGES ===== */
 
-@media (max-width: 900px) {
-  .eco-overview-hero {
-    height: 430px;
-    margin-bottom: 300px;
+.group-flip {
+  opacity: 0;
+  transform: perspective(1200px) rotateY(75deg);
+  transform-origin: center;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+  backface-visibility: hidden;
+}
+
+.group-flip.is-visible {
+  opacity: 1;
+  transform: perspective(1200px) rotateY(0deg);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1000px) {
+  .group-hero {
+    height: 360px;
   }
 
-  .eco-intro-card {
-    bottom: -260px;
-    width: calc(100% - 32px);
-  }
-
-  .eco-intro-card-overlay {
-    min-height: auto;
-    padding: 30px 24px;
-  }
-
-  .eco-intro-card h2 {
-    margin-bottom: 22px;
-    font-size: 24px;
-    letter-spacing: 2px;
-  }
-
-  .eco-intro-card p {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .eco-philosophy {
-    min-height: 360px;
-  }
-
-  .eco-philosophy-content {
-    padding: 52px 20px;
-  }
-
-  .eco-philosophy h2 {
-    font-size: 28px;
+  .group-hero h1 {
+    font-size: 26px;
     letter-spacing: 4px;
   }
 
-  .eco-philosophy p {
-    font-size: 15px;
+  .group-hero h1 strong {
+    font-size: 34px;
+    letter-spacing: 3px;
+  }
+
+  .group-intro {
+    padding: 42px 0 22px;
+  }
+
+  .group-main-title {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+
+  .group-split,
+  .group-split-reverse {
+    grid-template-columns: 1fr;
+    padding-top: 28px;
+  }
+
+  .group-split-reverse .group-split-content {
+    order: 2;
+  }
+
+  .group-split-reverse .group-split-image {
+    order: 1;
+  }
+
+  .group-split-image {
+    height: 320px;
+  }
+
+  .group-split-content {
+    padding: 28px 22px 12px;
+  }
+
+  .group-split-content h2 {
+    font-size: 26px;
+    letter-spacing: 3px;
+  }
+
+  .group-intro p,
+  .group-split-content p {
+    font-size: 16px;
     line-height: 1.6;
   }
 
-  .eco-five-e {
-    padding: 52px 18px;
-  }
-
-  .eco-e-block,
-  .eco-e-block.is-reverse {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 48px;
-  }
-
-  .eco-e-block.is-reverse .eco-e-image,
-  .eco-e-block.is-reverse .eco-e-content {
-    order: initial;
-  }
-
-  .eco-e-image {
-    height: 250px;
-  }
-
-  .eco-e-content h3 {
-    font-size: 28px;
-    letter-spacing: 2px;
-  }
-
-  .eco-e-subtitle {
-    font-size: 22px;
-    letter-spacing: 1px;
-  }
-
-  .eco-e-text {
-    font-size: 16px;
-  }
-
-  .reveal-up {
+  .group-reveal {
     transform: translateY(42px);
+  }
+
+  .group-flip {
+    transform: perspective(900px) rotateY(55deg);
   }
 }
 
 @media (max-width: 480px) {
-  .eco-overview-hero {
-    height: 360px;
-    margin-bottom: 360px;
+  .group-hero {
+    height: 300px;
   }
 
-  .eco-intro-card {
-    bottom: -330px;
+  .group-hero h1 {
+    font-size: 22px;
   }
 
-  .eco-intro-card h2 {
-    font-size: 21px;
+  .group-hero h1 strong {
+    font-size: 28px;
   }
 
-  .eco-intro-card p {
-    font-size: 14px;
+  .group-container {
+    padding: 0 16px;
   }
 
-  .eco-philosophy h2 {
+  .group-main-title {
     font-size: 24px;
+    letter-spacing: 2px;
   }
 
-  .eco-e-image {
-    height: 220px;
+  .group-split-image {
+    height: 240px;
   }
 
-  .eco-e-content h3 {
-    font-size: 24px;
+  .group-split-content {
+    padding: 24px 16px 8px;
   }
 
-  .eco-e-subtitle {
-    font-size: 19px;
+  .group-split-content h2 {
+    font-size: 23px;
   }
 
-  .eco-e-text {
+  .group-intro p,
+  .group-split-content p {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .group-split,
+  .group-split-reverse {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 28px 20px 0;
+  }
+
+  .group-split-content {
+    padding: 28px 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .group-split,
+  .group-split-reverse {
+    padding: 24px 16px 0;
+  }
+
+  .group-split-content {
+    padding: 24px 0 8px;
   }
 }
