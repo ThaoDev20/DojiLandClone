@@ -1,28 +1,72 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useData } from '../context/DataContext';
-import { useModal } from '../context/ModalContext';
-import { MapPin, Building, Ruler, Calendar, CheckSquare, Phone } from 'lucide-react';
 import Button from '../components/Button';
-// import InterestForm from '../components/home/InterestForm';
 import './ProjectDetailPage.css';
 
 const ProjectDetailPage = () => {
     const { slug } = useParams();
     const { projects, isLoading } = useData();
-    const { openModal } = useModal();
 
-    // Normalize slug to handle encoding issues
+    const [activeAmenityIndex, setActiveAmenityIndex] = React.useState(0);
+
     const normalizedSlug = slug?.toLowerCase().trim();
 
-    // Find project by slug with normalization
     const project = projects.find(p => p.slug?.toLowerCase().trim() === normalizedSlug);
 
-    // Debug logging (remove in production)
+    const amenityImages = project.projectImages?.length
+        ? project.projectImages
+        : project.image
+            ? [project.image]
+            : [];
+
+    const currentAmenityImage = amenityImages[activeAmenityIndex];
+
+    const currentAmenityName =
+        project.amenities?.[activeAmenityIndex] || 'Tiện ích';
+
+    const handlePrevAmenity = () => {
+        setActiveAmenityIndex(prev =>
+            prev === 0 ? amenityImages.length - 1 : prev - 1
+        );
+    };
+
+    const handleNextAmenity = () => {
+        setActiveAmenityIndex(prev =>
+            prev === amenityImages.length - 1 ? 0 : prev + 1
+        );
+    };
+
+    const mainImage = project.projectImages?.[0] || project.image;
+    const secondImage = project.projectImages?.[1] || project.image;
+
+    const overviewItems = [
+        ["Tên dự án", project.name],
+        ["Vị trí", project.location],
+        ["Mức giá", project.price],
+        ["Diện tích", project.area],
+        ["Chủ đầu tư", project.investor],
+        ["Quy mô", project.scale],
+        ["Đơn vị thiết kế", project.designUnit],
+        ["Đơn vị thi công", project.constructionUnit],
+        ["Pháp lý", project.legal],
+        ["Bàn giao", project.handover],
+        ["Tiện ích", project.amenities?.join(" | ")],
+    ];
+
+    const locationItems = [
+        ["Phía Đông", project.locationAnalysis_east],
+        ["Phía Tây", project.locationAnalysis_west],
+        ["Phía Nam", project.locationAnalysis_south],
+        ["Phía Bắc", project.locationAnalysis_north],
+        ["Kết nối", project.locationAnalysis_connection],
+    ];
+
+
+
     React.useEffect(() => {
-        // Scroll to top when component mounts
         window.scrollTo(0, 0);
-        
+
         if (!project && !isLoading) {
             console.warn('Project not found for slug:', normalizedSlug);
             console.log('Available slugs:', projects.map(p => p.slug));
@@ -32,7 +76,6 @@ const ProjectDetailPage = () => {
         }
     }, [project, normalizedSlug, projects, isLoading]);
 
-    // Show loading state while data is being fetched
     if (isLoading) {
         return (
             <div className="container" style={{ padding: '100px 20px', textAlign: 'center' }}>
@@ -52,147 +95,95 @@ const ProjectDetailPage = () => {
         );
     }
 
-    const handleRegister = () => {
-        openModal('register', { project });
-    };
-
     return (
-        <div className="project-detail-page">
-            {/* 1. Header Info */}
-            <section className="project-header">
-                <div className="container">
-                    <div className="header-grid">
-                        <div className="header-image">
-                            <img 
-                                src={project.image} 
-                                alt={project.name} 
-                                loading="eager"
-                                decoding="async"
+        <section className="project-intro">
+            <div
+                className="project-hero"
+                style={{ backgroundImage: `url(${project.image})` }}
+            >
+                <h1>Sản phẩm đang giới thiệu</h1>
+            </div>
+
+            <div className="project-detail">
+                <h2 className="project-title">
+                    <span>{project.name}</span>
+                    {project.statusLabel && <em>{project.statusLabel}</em>}
+                </h2>
+
+                <div className="project-grid">
+                    <div className="project-content">
+                        <h3>Tổng quan dự án</h3>
+
+                        {overviewItems.map(([label, value]) =>
+                            value ? (
+                                <p key={label}>
+                                    <strong>{label}:</strong> {value}
+                                </p>
+                            ) : null
+                        )}
+                    </div>
+
+                    <div className="project-image">
+                        <img src={mainImage} alt={project.name} />
+                    </div>
+
+                    <div className="project-image">
+                        <img src={secondImage} alt={`Vị trí ${project.name}`} />
+                    </div>
+
+                    <div className="project-content project-location">
+                        <h3>Vị trí</h3>
+
+                        {locationItems.map(([label, value]) =>
+                            value ? (
+                                <p key={label}>
+                                    <strong>{label}:</strong> {value}
+                                </p>
+                            ) : null
+                        )}
+                    </div>
+                </div>
+                {amenityImages.length > 0 && (
+                    <div className="project-amenities">
+                        <p className="project-amenities-title">Tiện ích</p>
+
+                        <div className="project-amenities-slider">
+                            <img
+                                src={currentAmenityImage}
+                                alt={`${currentAmenityName} - ${project.name}`}
                             />
-                            <span className={`status-badge status-${project.status}`}>{project.statusLabel}</span>
-                        </div>
-                        <div className="header-info">
-                            <h1 className="project-title">{project.name}</h1>
-                            <div className="project-meta">
-                                <div className="meta-item">
-                                    <MapPin size={18} /> <span>{project.location}</span>
-                                </div>
-                                <div className="meta-item price-tag">
-                                    Giá: {project.price}
-                                </div>
+
+                            <div className="project-amenities-overlay">
+                                <p className="project-amenities-label">Tiện ích</p>
+                                <p className="project-amenities-name">{currentAmenityName}</p>
                             </div>
 
-                            <div className="info-table">
-                                <div className="table-row">
-                                    <span className="label">Chủ đầu tư:</span>
-                                    <span className="value">{project.investor}</span>
-                                </div>
-                                <div className="table-row">
-                                    <span className="label">Quy mô:</span>
-                                    <span className="value">{project.scale}</span>
-                                </div>
-                                <div className="table-row">
-                                    <span className="label">Pháp lý:</span>
-                                    <span className="value">{project.legal}</span>
-                                </div>
-                                <div className="table-row">
-                                    <span className="label">Bàn giao:</span>
-                                    <span className="value">{project.handover}</span>
-                                </div>
-                            </div>
+                            <div className="project-amenities-control">
+                                <button
+                                    type="button"
+                                    className="project-amenities-arrow"
+                                    onClick={handlePrevAmenity}
+                                >
+                                    ‹
+                                </button>
 
-                            <div className="header-actions">
-                                <Button onClick={() => window.open('tel:0914824825')} variant="outline" className="w-full">
-                                    <Phone size={18} style={{ marginRight: 8 }} /> Hotline tư vấn
-                                </Button>
+                                <span className="project-amenities-count">
+                                    {activeAmenityIndex + 1}/{amenityImages.length}
+                                </span>
+
+                                <button
+                                    type="button"
+                                    className="project-amenities-arrow"
+                                    onClick={handleNextAmenity}
+                                >
+                                    ›
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            {/* 2. Overview & Design */}
-            <section className="section bg-white">
-                <div className="container">
-                    <h2 className="section-title">Tổng quan dự án</h2>
-                    <p className="project-description">{project.description}</p>
-
-                    {/* Image Gallery */}
-                    {project.projectImages && Array.isArray(project.projectImages) && project.projectImages.length > 0 && (
-                        <div className="project-gallery">
-                            <h3 className="sub-title">Hình ảnh dự án</h3>
-                            <div className="gallery-grid">
-                                {project.projectImages.map((url, index) => (
-                                    <div key={index} className="gallery-item">
-                                        <img 
-                                            src={url} 
-                                            alt={`${project.name} - ${index + 1}`} 
-                                            loading="lazy"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-
-                    <h3 className="sub-title">Tiện ích nổi bật</h3>
-                    <ul className="amenities-list">
-                        {project.amenities && Array.isArray(project.amenities) && project.amenities.map((item, idx) => (
-                            <li key={idx}><CheckSquare size={16} color="var(--primary-color)" /> {item}</li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
-
-            {/* 3. Location Analysis */}
-            <section className="section location-section">
-                <div className="container">
-                    <h2 className="section-title">Vị trí & Liên kết vùng</h2>
-                    <div className="location-grid">
-                        <div className="location-info">
-                            <p><strong>Phía Đông:</strong> {project.locationAnalysis_east}</p>
-                            <p><strong>Phía Tây:</strong> {project.locationAnalysis_west}</p>
-                            <p><strong>Phía Nam:</strong> {project.locationAnalysis_south}</p>
-                            <p><strong>Phía Bắc:</strong> {project.locationAnalysis_north}</p>
-                            <p className="highlight-box">{project.locationAnalysis_connection}</p>
-                        </div>
-                        <div className="location-map-wrapper">
-                            {project.mapEmbedUrl ? (
-                                <iframe
-                                    src={project.mapEmbedUrl}
-                                    width="100%"
-                                    height="100%"
-                                    style={{ border: 0 }}
-                                    allowFullScreen=""
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                ></iframe>
-                            ) : (
-                                <div className="location-map-placeholder">
-                                    <span>Chưa cập nhật bản đồ</span>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 4. Policy - Static for now */}
-            <section className="section bg-white">
-                <div className="container">
-                    <h2 className="section-title">Chính sách & Tiến độ thanh toán</h2>
-                    <div className="policy-block">
-                        <p>Dự án được hỗ trợ vay vốn gói tín dụng ưu đãi cho NOXH.</p>
-                        <p>Tiến độ thanh toán linh hoạt chia làm 7-8 đợt.</p>
-                        <p><em>(Liên hệ để nhận bảng tiến độ chi tiết)</em></p>
-                    </div>
-                </div>
-            </section>
-
-            {/* 5. CTA Form */}
-            {/* <InterestForm /> */}
-        </div>
+                )}
+            </div>
+        </section>
     );
 };
 

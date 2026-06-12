@@ -7,7 +7,6 @@ const ProjectSection = () => {
   const { projects: projects2 } = useData();
   const itemRefs = useRef([]);
 
-  console.log('projects2', projects2);
 
   const projects = useMemo(() => {
     return (projects2 || []).filter((item) => item.isVisible !== false);
