@@ -344,3 +344,79 @@
         height: 32%;
     }
 }
+
+/* ===== RECRUITMENT HERO ===== */
+
+.recruitment-hero {
+  position: relative;
+  width: 100%;
+  height: 460px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recruitment-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.recruitment-hero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+
+  color: #fff;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.recruitment-hero h1 strong {
+  display: block;
+  margin-top: 6px;
+
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+@media (max-width: 768px) {
+  .recruitment-hero {
+    height: 320px;
+  }
+
+  .recruitment-hero h1 {
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+
+  .recruitment-hero h1 strong {
+    font-size: 30px;
+    letter-spacing: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruitment-hero {
+    height: 260px;
+  }
+
+  .recruitment-hero h1 {
+    font-size: 21px;
+  }
+
+  .recruitment-hero h1 strong {
+    font-size: 26px;
+  }
+}

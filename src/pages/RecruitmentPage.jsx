@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Upload } from 'lucide-react';
 import './RecruitmentPage.css';
 
+const RECRUITMENT_HERO_IMAGE =
+  'https://ecopark.com.vn/images/slideshow/2020/09/10/original/group-353_1599751552.jpg';
+
 const recruitmentItems = [
   {
     title: 'CƠ HỘI PHÁT TRIỂN SỰ NGHIỆP',
@@ -38,6 +41,16 @@ const recruitmentItems = [
 const RecruitmentPage = () => {
   return (
     <main className="recruitment-page">
+
+      <section
+        className="recruitment-hero"
+        style={{ backgroundImage: `url(${RECRUITMENT_HERO_IMAGE})` }}
+      >
+        <h1>
+          Thông tin
+          <strong>Tuyển dụng</strong>
+        </h1>
+      </section>
       <section className="recruitment-section">
         <div className="recruitment-container">
           <h2 className="recruitment-title">ỨNG TUYỂN VỚI VIỆT THẮNG</h2>
