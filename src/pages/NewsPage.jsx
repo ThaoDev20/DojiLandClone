@@ -50,22 +50,43 @@ const NewsPage = () => {
   React.useEffect(() => {
     const elements = document.querySelectorAll(".news-animate");
 
+    let lastScrollY = window.scrollY;
+    let scrollDirection = "down";
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && scrollDirection === "down") {
             entry.target.classList.add("is-visible");
+          }
+
+          if (!entry.isIntersecting && scrollDirection === "up") {
+            entry.target.classList.remove("is-visible");
           }
         });
       },
       {
         threshold: 0.15,
+        rootMargin: "0px 0px -8% 0px",
       }
     );
 
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+    };
   }, [paginatedNews]);
 
   const truncateText = (text, maxLength = 180) => {
@@ -107,7 +128,7 @@ const NewsPage = () => {
                 to={`/tin-du-an/${paginatedNews[0].id}`}
                 className="news-featured news-animate"
               >
-                <div className="news-featured-image">
+                <div className="news-featured-image news-animate">
                   <img
                     src={paginatedNews[0].image || "https://placehold.co/900x520"}
                     alt={paginatedNews[0].title}
@@ -126,7 +147,7 @@ const NewsPage = () => {
                   to={`/tin-du-an/${item.id}`}
                   className={`news-card news-animate ${index % 2 === 0 ? "is-reverse" : ""}`}
                 >
-                  <div className="news-card-image">
+                  <div className="news-card-image news-animate">
                     <img
                       src={item.image || "https://placehold.co/700x420"}
                       alt={item.title}

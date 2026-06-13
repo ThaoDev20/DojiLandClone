@@ -37,6 +37,33 @@ const ProjectDetailPage = () => {
         );
     };
 
+    React.useEffect(() => {
+        const elements = document.querySelectorAll(".project-reveal, .project-flip");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                    } else {
+                        entry.target.classList.remove("is-visible");
+                    }
+                });
+            },
+            {
+                threshold: 0.18,
+                rootMargin: "0px 0px -8% 0px",
+            }
+        );
+
+        elements.forEach((el) => observer.observe(el));
+
+        return () => {
+            elements.forEach((el) => observer.unobserve(el));
+            observer.disconnect();
+        };
+    }, [project?.slug]);
+
     const mainImage = project.projectImages?.[0] || project.image;
     const secondImage = project.projectImages?.[1] || project.image;
 
@@ -123,11 +150,11 @@ const ProjectDetailPage = () => {
                         )}
                     </div>
 
-                    <div className="project-image">
+                    <div className="project-image project-reveal">
                         <img src={mainImage} alt={project.name} />
                     </div>
 
-                    <div className="project-image">
+                    <div className="project-image project-flip">
                         <img src={secondImage} alt={`Vị trí ${project.name}`} />
                     </div>
 
@@ -147,7 +174,7 @@ const ProjectDetailPage = () => {
                     <div className="project-amenities">
                         <p className="project-amenities-title">Tiện ích</p>
 
-                        <div className="project-amenities-slider">
+                       <div className="project-amenities-slider project-reveal">
                             <img
                                 src={currentAmenityImage}
                                 alt={`${currentAmenityName} - ${project.name}`}

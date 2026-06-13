@@ -407,3 +407,45 @@
     font-size: 26px;
   }
 }
+
+/* ===== PROJECT SCROLL EFFECT ===== */
+
+.project-reveal {
+  opacity: 0;
+  transform: translateY(70px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+  will-change: opacity, transform;
+}
+
+.project-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-flip {
+  opacity: 0;
+  transform: perspective(1200px) rotateY(75deg);
+  transform-origin: center;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+  backface-visibility: hidden;
+  will-change: opacity, transform;
+}
+
+.project-flip.is-visible {
+  opacity: 1;
+  transform: perspective(1200px) rotateY(0deg);
+}
+
+@media (max-width: 1000px) {
+  .project-reveal {
+    transform: translateY(42px);
+  }
+
+  .project-flip {
+    transform: perspective(900px) rotateY(55deg);
+  }
+}

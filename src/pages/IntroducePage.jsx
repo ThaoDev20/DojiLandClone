@@ -23,15 +23,23 @@ const IntroducePage = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
+          } else {
+            entry.target.classList.remove("is-visible");
           }
         });
       },
-      { threshold: 0.18 }
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -8% 0px",
+      }
     );
 
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -109,7 +117,7 @@ const IntroducePage = () => {
         </div>
       </section>
 
-      <section className="group-split group-split-reverse group-reveal">
+      <section className="group-split group-split-reverse">
         <div className="group-split-content">
           <h2>Cốt lõi</h2>
 
@@ -141,7 +149,7 @@ const IntroducePage = () => {
         </div>
       </section>
 
-      <section className="group-split group-reveal">
+      <section className="group-split">
         <div className="group-split-image group-flip">
           <img src={IMAGES.awards} alt="Giải thưởng Việt Thắng" />
         </div>
