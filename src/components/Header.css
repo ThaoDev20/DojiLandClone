@@ -569,3 +569,7 @@
     display: none;
   }
 }
+
+.highlight-btn {
+  text-decoration: none;
+}

@@ -9,14 +9,14 @@ const LOGO_URL = '';
 const highlightItems = [
   {
     label: 'Các dự án nổi bật',
-    hash: 'projects_highlight',
+    href: '/du-an-noi-bat',
     showOn: '/du-an',
   },
-  {
-    label: 'Sự kiện gần đây',
-    hash: 'events_latest',
-    showOn: '/tin-du-an',
-  },
+  // {
+  //   label: 'Sự kiện gần đây',
+  //   hash: 'events_latest',
+  //   showOn: '/tin-du-an',
+  // },
 ];
 
 const Header = () => {
@@ -91,10 +91,6 @@ const Header = () => {
     }));
   };
 
-  const goToHash = (hash) => {
-    closeMenu();
-    window.location.href = `/#${hash}`;
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -136,24 +132,20 @@ const Header = () => {
             </div>
           ))}
         </nav>
-
-        <div className="desktop-highlight-list">
-          {visibleHighlightItems.length > 0 && (
-            <div className="desktop-highlight-list">
-              {visibleHighlightItems.map((item) => (
-                <button
-                  key={item.hash}
-                  type="button"
-                  className="highlight-btn"
-                  onClick={() => goToHash(item.hash)}
-                >
-                  <span className="highlight-icon" />
-                  <span className="highlight-label">{item.label}</span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+        {visibleHighlightItems.length > 0 && (
+          <div className="desktop-highlight-list">
+            {visibleHighlightItems.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="highlight-btn"
+              >
+                <span className="highlight-icon" />
+                <span className="highlight-label">{item.label}</span>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="header-mobile">
@@ -218,23 +210,21 @@ const Header = () => {
             );
           })}
 
-          <div className="mobile-highlight-list">
-            {visibleHighlightItems.length > 0 && (
-              <div className="mobile-highlight-list">
-                {visibleHighlightItems.map((item) => (
-                  <button
-                    key={item.hash}
-                    type="button"
-                    className="highlight-btn mobile-highlight-btn"
-                    onClick={() => goToHash(item.hash)}
-                  >
-                    <span className="highlight-icon" />
-                    <span>{item.label}</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+          {visibleHighlightItems.length > 0 && (
+            <div className="mobile-highlight-list">
+              {visibleHighlightItems.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="highlight-btn mobile-highlight-btn"
+                  onClick={closeMenu}
+                >
+                  <span className="highlight-icon" />
+                  <span>{item.label}</span>
+                </Link>
+              ))}
+            </div>
+          )}
         </nav>
       </div>
     </header>

@@ -24,6 +24,7 @@ const VideosPage = lazy(() => import('./pages/VideosPage'));
 const NewslettersPage = lazy(() => import('./pages/NewslettersPage'));
 const VideosDetailPage = lazy(() => import('./pages/VideosDetailPage'));
 const NewslettersDetailPage = lazy(() => import('./pages/NewslettersDetailPage'));
+const ProjectHotPage = lazy(() => import('./pages/ProjectHotPage'))
 
 
 // Loading component
@@ -76,6 +77,7 @@ function App() {
                 <Route path="/ban-tin" element={<Layout><NewslettersPage /></Layout>} />
                 <Route path="/ban-tin/:id" element={<Layout><NewslettersDetailPage /></Layout>} />
                 <Route path="/video-du-an/:id" element={<Layout><VideosDetailPage /></Layout>} />
+                <Route path="/du-an-noi-bat" element={<Layout><ProjectHotPage /></Layout>} />
               </Routes>
             </Suspense>
             {/* <RegistrationModal /> */}
