@@ -9,7 +9,7 @@ const FORM_DECOR_2 = 'https://dojiland.vn/wp-content/themes/main/assets/images/c
 
 const footerMenu = [
   { label: 'Giới thiệu', href: '/gioi-thieu' },
-  { label: 'Dự án', href: '#' },
+  { label: 'Dự án', href: '/du-an-noi-bat' },
   { label: 'Truyền thông', href: '/tin-du-an' },
   { label: 'Tuyển dụng', href: '/tuyen-dung' },
   { label: 'Liên hệ', href: '/lien-he' },
@@ -43,7 +43,7 @@ const Footer = () => {
     <footer id="colophon" className="site-footer">
       <div
         className="footer-main"
-        style={{ backgroundColor:'#62813b' }}
+        style={{ backgroundColor: '#62813b' }}
       >
         <div className="footer-content">
           <div className="footer-left">
@@ -94,7 +94,7 @@ const Footer = () => {
 
             <form className="footer-form" onSubmit={handleSubmit}>
               <img className="footer-form-decor-1" src={FORM_DECOR_2} alt="" />
-              <img className="footer-form-decor-2" src={FORM_DECOR_1}  alt="" />
+              <img className="footer-form-decor-2" src={FORM_DECOR_1} alt="" />
 
               <input
                 type="email"
