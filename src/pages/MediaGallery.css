@@ -40,7 +40,6 @@
 
 .media-gallery-title span:last-child {
   font-weight: 300;
-  letter-spacing: 5px;
 }
 
 .media-gallery-subtitle {
@@ -198,9 +197,6 @@
     font-size: 34px;
   }
 
-  .media-gallery-title span:last-child {
-    letter-spacing: 3px;
-  }
 
   .media-gallery-card,
   .media-gallery-card-1,

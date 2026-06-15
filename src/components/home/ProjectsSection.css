@@ -110,7 +110,6 @@
   margin: 0 0 14px;
   font-size: 13px;
   line-height: 1.4;
-  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.78);
 }
@@ -120,7 +119,6 @@
   font-size: clamp(30px, 3vw, 46px);
   line-height: 1.12;
   font-weight: 700;
-  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
@@ -176,6 +174,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .project-feature-card,
   .project-feature-card-first,
   .project-feature-card-image-right {

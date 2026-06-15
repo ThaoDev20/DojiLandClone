@@ -63,7 +63,6 @@ const ProjectSection = () => {
             </div>
 
             <div className="project-feature-content">
-              <p className="project-feature-status">{project.statusLabel}</p>
 
               <h2>{project.name}</h2>
 

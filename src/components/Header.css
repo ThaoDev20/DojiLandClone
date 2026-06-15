@@ -60,21 +60,21 @@
   align-items: center;
   width: 100%;
   height: 90px;
-  padding: 0 52px 0 0;
+  padding: 0 300px;
+
   background: transparent;
 }
 
 .header-logo {
   position: relative;
-  align-self: center;
   width: 200px;
   height: 96px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-left: 10px;
-  transform: translateX(100px);
+  justify-content: flex-end;
+  flex-shrink: 0;
   z-index: 2;
+  left: 50px;
 }
 
 .header-logo img {
@@ -84,24 +84,13 @@
   object-fit: contain;
 }
 
-.desktop-language {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-left: 52px;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-
 .desktop-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 58px;
-  margin-left: 80px;
+  /* giảm khoảng cách giữa các item */
+  gap: 32px;
+
   flex: 1;
 }
 

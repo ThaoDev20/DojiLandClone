@@ -12,7 +12,7 @@ const Home = () => {
             <ProjectsSection />
             {/* <IntroSection /> */}
             <EventsSection />
-            <MediaGallery/>
+            <MediaGallery />
             {/* <EcosystemSection /> */}
         </div>
     );

@@ -212,7 +212,6 @@ const NewslettersPage = () => {
             color: #fff;
             font-size: 38px;
             font-weight: 300;
-            letter-spacing: 8px;
             text-transform: uppercase;
           }
 
@@ -221,7 +220,6 @@ const NewslettersPage = () => {
             margin-top: 6px;
             font-size: 42px;
             font-weight: 800;
-            letter-spacing: 4px;
           }
 
           /* ===== NEWS SECTION ===== */
@@ -243,7 +241,6 @@ const NewslettersPage = () => {
             font-size: 40px;
             font-weight: 300;
             line-height: 1.2;
-            letter-spacing: 7px;
             text-align: center;
             text-transform: uppercase;
           }
@@ -293,7 +290,6 @@ const NewslettersPage = () => {
             font-size: 30px;
             font-weight: 800;
             line-height: 1.45;
-            letter-spacing: 2px;
           }
 
           .news-featured-content span,
@@ -301,7 +297,6 @@ const NewslettersPage = () => {
             display: block;
             color: #344432;
             font-size: 16px;
-            letter-spacing: 1px;
           }
 
           /* ===== NORMAL NEWS ===== */
@@ -336,7 +331,6 @@ const NewslettersPage = () => {
             font-size: 30px;
             font-weight: 800;
             line-height: 1.45;
-            letter-spacing: 2px;
           }
 
           .news-card-content p {
@@ -374,7 +368,6 @@ const NewslettersPage = () => {
 
             .news-hero h1 {
               font-size: 26px;
-              letter-spacing: 4px;
               text-align: center;
             }
 
@@ -393,7 +386,6 @@ const NewslettersPage = () => {
             .news-section-title {
               margin-bottom: 32px;
               font-size: 28px;
-              letter-spacing: 3px;
             }
 
             .news-list {

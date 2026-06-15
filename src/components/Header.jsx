@@ -4,25 +4,19 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import './Header.css';
 import { useData } from '../context/DataContext';
 
-const LOGO_URL = '';
-
 const highlightItems = [
   {
     label: 'Các dự án nổi bật',
     href: '/du-an-noi-bat',
     showOn: '/du-an',
   },
-  // {
-  //   label: 'Sự kiện gần đây',
-  //   hash: 'events_latest',
-  //   showOn: '/tin-du-an',
-  // },
 ];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState({});
   const [isScrolled, setIsScrolled] = useState(false);
+
   const location = useLocation();
   const { projects } = useData();
 
@@ -35,14 +29,14 @@ const Header = () => {
       },
     ];
 
-    if (projects && projects.length > 0) {
+    if (projects?.length > 0) {
       baseMenu.push({
         label: 'Dự án',
         href: `/du-an/${projects[0].slug}`,
-        children: projects.map(proj => ({
-          label: proj.name,
-          href: `/du-an/${proj.slug}`
-        }))
+        children: projects.map((project) => ({
+          label: project.name,
+          href: `/du-an/${project.slug}`,
+        })),
       });
     }
 
@@ -53,7 +47,7 @@ const Header = () => {
         children: [
           { label: 'Tin tức', href: '/tin-du-an' },
           { label: 'Video', href: '/video-du-an' },
-          { label: 'Bản tin', href: '/ban-tin' }
+          { label: 'Bản tin', href: '/ban-tin' },
         ],
       },
       { label: 'Tuyển dụng', href: '/tuyen-dung' },
@@ -65,12 +59,12 @@ const Header = () => {
 
   const isHomePage = location.pathname === '/';
   const shouldUseScrolledStyle = isScrolled || !isHomePage;
+
   const visibleHighlightItems = useMemo(() => {
     const pathname = location.pathname.replace(/\/+$/, '');
 
     return highlightItems.filter((item) => {
       const showOn = item.showOn.replace(/\/+$/, '');
-
       return pathname.startsWith(`${showOn}/`);
     });
   }, [location.pathname]);
@@ -82,6 +76,19 @@ const Header = () => {
       document.body.style.overflow = '';
     };
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -95,26 +102,11 @@ const Header = () => {
     }));
   };
 
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
-
-    handleScroll();
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <header className={`header ${shouldUseScrolledStyle ? 'scrolled' : ''}`}>
       <div className="header-desktop">
         <Link to="/" className="header-logo">
-          <img src='Logo.png' alt="Logo" />
+          <img src="/Logo.png" alt="Logo" />
         </Link>
 
         <nav className="desktop-nav">
@@ -127,7 +119,11 @@ const Header = () => {
               {item.children && (
                 <div className="desktop-dropdown">
                   {item.children.map((child, childIndex) => (
-                    <Link key={childIndex} to={child.href} className="desktop-dropdown-link">
+                    <Link
+                      key={childIndex}
+                      to={child.href}
+                      className="desktop-dropdown-link"
+                    >
                       {child.label}
                     </Link>
                   ))}
@@ -136,16 +132,13 @@ const Header = () => {
             </div>
           ))}
         </nav>
+
         {visibleHighlightItems.length > 0 && (
           <div className="desktop-highlight-list">
             {visibleHighlightItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className="highlight-btn"
-              >
+              <Link key={item.href} to={item.href} className="highlight-btn">
                 <span className="highlight-icon" />
-                <span className="highlight-label">{item.label}</span>
+                <span>{item.label}</span>
               </Link>
             ))}
           </div>
@@ -154,19 +147,22 @@ const Header = () => {
 
       <div className="header-mobile">
         <Link to="/" className="mobile-logo">
-          <img src='Logo.png' alt="Logo" />
+          <img src="/Logo.png" alt="Logo" />
         </Link>
 
-        <button type="button" className="mobile-menu-button" onClick={() => setIsMenuOpen(true)}>
+        <button
+          type="button"
+          className="mobile-menu-button"
+          onClick={() => setIsMenuOpen(true)}
+        >
           <Menu size={28} strokeWidth={2.4} />
         </button>
       </div>
 
       <div className={`mobile-menu-panel ${isMenuOpen ? 'active' : ''}`}>
         <div className="mobile-menu-top">
-
           <Link to="/" className="mobile-panel-logo" onClick={closeMenu}>
-            <img src='Logo.png' alt="Logo" />
+            <img src="/Logo.png" alt="Logo" />
           </Link>
 
           <button type="button" className="mobile-close-button" onClick={closeMenu}>
@@ -176,12 +172,16 @@ const Header = () => {
 
         <nav className="mobile-nav">
           {menuItems.map((item, index) => {
-            const hasChildren = Array.isArray(item.children) && item.children.length > 0;
+            const hasChildren = item.children?.length > 0;
 
             return (
               <div key={index} className="mobile-nav-item">
                 <div className="mobile-nav-row">
-                  <Link to={item.href} className="mobile-nav-link" onClick={!hasChildren ? closeMenu : undefined}>
+                  <Link
+                    to={item.href}
+                    className="mobile-nav-link"
+                    onClick={!hasChildren ? closeMenu : undefined}
+                  >
                     {item.label}
                   </Link>
 
