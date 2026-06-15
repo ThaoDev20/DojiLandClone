@@ -66,7 +66,7 @@ const NewsDetailPage = () => {
         </div>
 
         <div className="news-sidebar">
-          <h3>Tin tức khác</h3>
+          <h3>Tin tức nổi bật</h3>
           <div className="sidebar-list">
             {news
               .filter((n) => n.id !== newsItem.id)
