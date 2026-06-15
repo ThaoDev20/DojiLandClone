@@ -5,6 +5,35 @@ import './ProjectHotPage.css';
 const ProjectHotPage = () => {
     const { projects, isLoading } = useData();
 
+    const firstProjectTitleRef = React.useRef(null);
+
+    React.useEffect(() => {
+        if (isLoading || !projects?.length || !firstProjectTitleRef.current) return;
+
+        const scrollToFirstTitle = () => {
+            const titleEl = firstProjectTitleRef.current;
+
+            const headerEl =
+                document.querySelector('.header') ||
+                document.querySelector('header');
+
+            const headerHeight = headerEl?.offsetHeight || 90;
+            const extraGap = 100;
+
+            const titleTop =
+                titleEl.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+                top: titleTop - headerHeight - extraGap,
+                behavior: 'auto',
+            });
+        };
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(scrollToFirstTitle);
+        });
+    }, [isLoading, projects]);
+
     React.useEffect(() => {
         const elements = document.querySelectorAll(
             '.project-reveal, .project-flip, .project-card'
@@ -34,9 +63,6 @@ const ProjectHotPage = () => {
         };
     }, [projects]);
 
-    React.useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     if (isLoading) {
         return (
@@ -62,7 +88,7 @@ const ProjectHotPage = () => {
                 className="project-hero"
                 style={{ backgroundImage: `url(${projects[0]?.image})` }}
             >
-                <h1>Sản phẩm đang giới thiệu</h1>
+                <h1>Dự án nổi bật</h1>
             </div>
 
             <div className="project-list">
@@ -84,8 +110,13 @@ const ProjectHotPage = () => {
                     ];
 
                     return (
-                        <article className="project-card" key={project.id || project.slug || index}>
-                            <h2 className="project-title">
+                        <article
+                            className="project-card"
+                            key={project.id || project.slug || index}
+                        >
+                            <h2
+                                ref={index === 0 ? firstProjectTitleRef : null}
+                                className="project-title">
                                 <span>{project.name}</span>
                                 {project.statusLabel && <em>{project.statusLabel}</em>}
                             </h2>

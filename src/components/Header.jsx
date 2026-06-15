@@ -66,9 +66,13 @@ const Header = () => {
   const isHomePage = location.pathname === '/';
   const shouldUseScrolledStyle = isScrolled || !isHomePage;
   const visibleHighlightItems = useMemo(() => {
-    return highlightItems.filter((item) =>
-      location.pathname.startsWith(item.showOn)
-    );
+    const pathname = location.pathname.replace(/\/+$/, '');
+
+    return highlightItems.filter((item) => {
+      const showOn = item.showOn.replace(/\/+$/, '');
+
+      return pathname.startsWith(`${showOn}/`);
+    });
   }, [location.pathname]);
 
   useEffect(() => {

@@ -231,6 +231,18 @@ const NewsletterDetailPage = () => {
             font-size: 1.8rem;
           }
         }
+          .sidebar-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.sidebar-item:last-child {
+  border-bottom: none;
+}
       `}</style>
     </div>
   );
