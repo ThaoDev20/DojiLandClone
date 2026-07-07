@@ -48,13 +48,13 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-left">
             <Link to="/" className="footer-logo">
-              <img src='Logo.png' alt="Logo" />
+              <img src='Logo1.png' alt="Logo" />
             </Link>
           </div>
 
           <div className="footer-center">
             <div className="footer-column">
-              <h3 className="footer-title">Về Việt Thắng</h3>
+              <h3 className="footer-title">Về VTGROUP</h3>
 
               <ul className="footer-menu">
                 {footerMenu.map((item) => (
@@ -89,7 +89,7 @@ const Footer = () => {
 
           <div className="footer-right">
             <p className="footer-notice">
-              Đăng ký nhận thông tin mới nhất từ Việt Thắng
+              Đăng ký nhận thông tin mới nhất từ VTGROUP
             </p>
 
             <form className="footer-form" onSubmit={handleSubmit}>
@@ -116,12 +116,12 @@ const Footer = () => {
             )}
 
             <p className="footer-copyright footer-copyright-desktop">
-              Copyright © Việt Thắng . All rights reserved
+              Copyright © VTGROUP . All rights reserved
             </p>
           </div>
 
           <p className="footer-copyright footer-copyright-mobile">
-            Copyright © Việt Thắng . All rights reserved
+            Copyright © VTGROUP . All rights reserved
           </p>
         </div>
 

@@ -106,7 +106,7 @@ const Header = () => {
     <header className={`header ${shouldUseScrolledStyle ? 'scrolled' : ''}`}>
       <div className="header-desktop">
         <Link to="/" className="header-logo">
-          <img src="/Logo.png" alt="Logo" />
+          <img src="/Logo1.png" alt="Logo" />
         </Link>
 
         <nav className="desktop-nav">
@@ -147,7 +147,7 @@ const Header = () => {
 
       <div className="header-mobile">
         <Link to="/" className="mobile-logo">
-          <img src="/Logo.png" alt="Logo" />
+          <img src="/Logo1.png" alt="Logo" />
         </Link>
 
         <button
@@ -162,7 +162,7 @@ const Header = () => {
       <div className={`mobile-menu-panel ${isMenuOpen ? 'active' : ''}`}>
         <div className="mobile-menu-top">
           <Link to="/" className="mobile-panel-logo" onClick={closeMenu}>
-            <img src="/Logo.png" alt="Logo" />
+            <img src="/Logo1.png" alt="Logo" />
           </Link>
 
           <button type="button" className="mobile-close-button" onClick={closeMenu}>

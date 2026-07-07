@@ -66,15 +66,15 @@ const IntroducePage = () => {
             CP đầu tư và phát triển đô thị Việt Hưng (Vihajico). Sự ra đời của
             công ty gắn liền với sứ mệnh xây dựng một khu đô thị sinh thái chức
             năng đầu tiên ở Việt Nam theo xu hướng phát triển đô thị hiện đại
-            của các quốc gia trên thế giới: khu đô thị Việt Thắng.
+            của các quốc gia trên thế giới: khu đô thị VTGROUP.
           </p>
 
           <p>
-            Sau hơn 21 năm phát triển, Việt Thắng đã trở thành một thành phố chức
+            Sau hơn 21 năm phát triển, VTGROUP đã trở thành một thành phố chức
             năng kiểu mẫu, tiên phong xác lập xu hướng Bất động sản Xanh với giá
             cả hợp lý, được quốc tế tôn vinh với nhiều giải thưởng danh giá. Ban
             lãnh đạo công ty đã quyết định thay đổi tên thành Công ty CP Tập đoàn
-            Việt Thắng, hướng tới mục tiêu phát triển bền vững, đầu tư đa ngành vào
+            VTGROUP, hướng tới mục tiêu phát triển bền vững, đầu tư đa ngành vào
             các lĩnh vực như giáo dục, y tế, nông nghiệp sạch, công nghệ cao, du
             lịch, vui chơi giải trí…; đồng thời vẫn giữ vững vị thế chủ chốt là
             Tập đoàn đầu tư và phát triển đô thị chuyên nghiệp theo xu hướng Bất
@@ -85,20 +85,20 @@ const IntroducePage = () => {
 
       <section className="group-split group-reveal">
         <div className="group-split-image">
-          <img src={IMAGES.intro} alt="Tập đoàn Việt Thắng" />
+          <img src={IMAGES.intro} alt="Tập đoàn VTGROUP" />
         </div>
 
         <div className="group-split-content">
           <h2>Tầm nhìn</h2>
           <p>
-            Tập đoàn Việt Thắng phấn đấu trở thành doanh nghiệp hàng đầu tại Việt
+            Tập đoàn VTGROUP phấn đấu trở thành doanh nghiệp hàng đầu tại Việt
             Nam và khu vực trong lĩnh vực đầu tư bất động sản và phát triển đô
             thị sinh thái thông minh theo xu hướng Bất Động Sản Xanh.
           </p>
 
           <h2>Sứ mệnh</h2>
           <p>
-            Tập đoàn Việt Thắng không chỉ đơn giản mang đến cho bạn một ngôi nhà,
+            Tập đoàn VTGROUP không chỉ đơn giản mang đến cho bạn một ngôi nhà,
             mà còn dành tặng cho khách hàng một không gian sống hoàn hảo.
           </p>
 
@@ -145,25 +145,25 @@ const IntroducePage = () => {
         </div>
 
         <div className="group-split-image group-flip">
-          <img src={IMAGES.core} alt="Cốt lõi Việt Thắng" />
+          <img src={IMAGES.core} alt="Cốt lõi VTGROUP" />
         </div>
       </section>
 
       <section className="group-split">
         <div className="group-split-image group-flip">
-          <img src={IMAGES.awards} alt="Giải thưởng Việt Thắng" />
+          <img src={IMAGES.awards} alt="Giải thưởng VTGROUP" />
         </div>
 
         <div className="group-split-content">
           <h2>Giải thưởng và thành tựu</h2>
 
           <p>
-            Tập đoàn Việt Thắng không chỉ đơn giản mang đến cho bạn một ngôi nhà,
+            Tập đoàn VTGROUP không chỉ đơn giản mang đến cho bạn một ngôi nhà,
             mà còn dành tặng cho khách hàng một không gian sống hoàn hảo.
           </p>
 
           <p>
-            Tập đoàn Việt Thắng tập trung kiến tạo những giá trị chung vượt thời
+            Tập đoàn VTGROUP tập trung kiến tạo những giá trị chung vượt thời
             gian cho khách hàng, cổ đông và các bên liên quan bằng các giải pháp
             Bất Động Sản Xanh đột phá, sáng tạo.
           </p>

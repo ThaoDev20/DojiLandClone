@@ -50,7 +50,7 @@ const IntroSection = () => {
 
       <div className="intro-container">
         <h2 className="intro-title intro-title-mobile">
-          Giới thiệu về Việt Thắng
+          Giới thiệu về VTGROUP
         </h2>
 
         <div className="intro-left intro-animate-left">
@@ -62,7 +62,7 @@ const IntroSection = () => {
             />
 
             <a href="/" target="_blank" rel="noreferrer">
-              <span>Công ty TNHH Việt Thắng</span>
+              <span>Công ty CP VTGROUP</span>
               {/* <img
                 src="https://dojiland.vn/wp-content/themes/main/assets/images/common/logo.png"
                 alt="DOJI"
@@ -87,7 +87,7 @@ const IntroSection = () => {
 
         <div className="intro-right intro-animate-right">
           <h2 className="intro-title">
-            Giới thiệu về Việt Thắng
+            Giới thiệu về VTGROUP
           </h2>
 
 
@@ -98,7 +98,7 @@ const IntroSection = () => {
             </p>
 
             <p>
-              Giới thiệu về Việt Thắng
+              Giới thiệu về VTGROUP
             </p>
           </div>
 

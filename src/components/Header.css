@@ -70,11 +70,12 @@
   width: 200px;
   height: 96px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
   flex-shrink: 0;
   z-index: 2;
   left: 50px;
+  top: 8px;
 }
 
 .header-logo img {

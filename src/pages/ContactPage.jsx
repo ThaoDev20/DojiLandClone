@@ -46,7 +46,7 @@ const ContactPage = () => {
         <div className="contact-wrapper">
           <div className="contact-info">
             <h2 className="contact-title">
-              CÔNG TY TNHH VIỆT THẮNG
+              CÔNG TY CP VTGROUP
             </h2>
 
             <div className="contact-list">
@@ -76,7 +76,7 @@ const ContactPage = () => {
           <div className="contact-form-box">
             <p className="contact-desc">
               Để biết thêm nhiều thông tin hữu ích, Quý khách hàng vui lòng liên hệ
-              với Việt Thắng qua điện thoại, email hoặc điền vào mẫu thông tin bên dưới.
+              với VTGROUP qua điện thoại, email hoặc điền vào mẫu thông tin bên dưới.
               <br />
               Trân trọng cảm ơn!
             </p>

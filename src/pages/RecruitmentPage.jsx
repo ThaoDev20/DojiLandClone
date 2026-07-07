@@ -8,32 +8,32 @@ const RECRUITMENT_HERO_IMAGE =
 const recruitmentItems = [
   {
     title: 'CƠ HỘI PHÁT TRIỂN SỰ NGHIỆP',
-    desc: 'Tại Việt Thắng, người lao động được tạo điều kiện và trao cơ hội để phát triển sự nghiệp và gắn kết chặt chẽ với mục tiêu phát triển bền vững của toàn công ty.',
+    desc: 'Tại VTGROUP, người lao động được tạo điều kiện và trao cơ hội để phát triển sự nghiệp và gắn kết chặt chẽ với mục tiêu phát triển bền vững của toàn công ty.',
     image: 'https://media-blog.jobsgo.vn/blog/wp-content/uploads/2023/11/cac-giai-doan-phat-trien-su-nghiep.jpg',
   },
   {
     title: 'MÔI TRƯỜNG LÀM VIỆC CHUYÊN NGHIỆP, ĐẲNG CẤP',
-    desc: 'Việt Thắng quan tâm và chú trọng đầu tư cho môi trường làm việc với các không gian hiện đại, đồng bộ, thân thiện, qua đó mỗi cá nhân có được sự chủ động, sáng tạo trong công việc và tăng cường tính gắn kết với tập thể.',
+    desc: 'VTGROUP quan tâm và chú trọng đầu tư cho môi trường làm việc với các không gian hiện đại, đồng bộ, thân thiện, qua đó mỗi cá nhân có được sự chủ động, sáng tạo trong công việc và tăng cường tính gắn kết với tập thể.',
     image: 'https://images.careerviet.vn/content/images/moi-truong-lam-viec-ly-tuong-careerbuilder-2.jpg',
   },
   {
     title: 'CHÍNH SÁCH ĐÀO TẠO CHUYÊN SÂU',
-    desc: 'Đào tạo và phát triển cho cán bộ nhân viên là một trong những ưu tiên hàng đầu của Việt Thắng. Các chương trình, hoạt động đào tạo diễn ra thường xuyên và đa dạng, qua đó giúp các cá nhân nâng cao kỹ năng chuyên môn nghiệp vụ và hướng đến lộ trình phát triển nghề nghiệp cho từng vị trí.',
+    desc: 'Đào tạo và phát triển cho cán bộ nhân viên là một trong những ưu tiên hàng đầu của VTGROUP. Các chương trình, hoạt động đào tạo diễn ra thường xuyên và đa dạng, qua đó giúp các cá nhân nâng cao kỹ năng chuyên môn nghiệp vụ và hướng đến lộ trình phát triển nghề nghiệp cho từng vị trí.',
     image: 'https://suno.vn/blog/wp-content/uploads/2018/10/%C4%91%C3%A0o-t%E1%BA%A1o-nh%C3%A2n-vi%C3%AAn-b%C3%A1n-h%C3%A0ng.jpg',
   },
   {
     title: 'TẬP THỂ CÁ NHÂN TINH HOA',
-    desc: 'Việt Thắng là tập thể của những cá nhân ưu tú, tinh hoa và khát khao bứt phá để thành công vượt trội và cùng chung mục tiêu hướng đến sự thành công và phát triển bền vững của công ty.',
+    desc: 'VTGROUP là tập thể của những cá nhân ưu tú, tinh hoa và khát khao bứt phá để thành công vượt trội và cùng chung mục tiêu hướng đến sự thành công và phát triển bền vững của công ty.',
     image: 'https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/thanh_cong_la_gi_5d97d5b21a.jpg',
   },
   {
     title: 'CHÍNH SÁCH HẤP DẪN',
-    desc: 'Chính sách Lương - Thưởng cạnh tranh với thị trường và tương xứng với hiệu quả làm việc. Việt Thắng xây dựng cơ chế khen thưởng dựa trên hệ thống đánh giá năng lực và hiệu quả công việc nhằm ghi nhận năng lực và sự cống hiến của mỗi cá nhân.',
+    desc: 'Chính sách Lương - Thưởng cạnh tranh với thị trường và tương xứng với hiệu quả làm việc. VTGROUP xây dựng cơ chế khen thưởng dựa trên hệ thống đánh giá năng lực và hiệu quả công việc nhằm ghi nhận năng lực và sự cống hiến của mỗi cá nhân.',
     image: 'https://openend.vn/wp-content/uploads/2023/09/chinh-sach-ban-hang-scaled-1.jpg',
   },
   {
-    title: 'ƯU ĐÃI TỪ HỆ SINH THÁI VIỆT THẮNG',
-    desc: 'Trở thành một thành viên của Việt Thắng, mỗi cá nhân được hưởng những quyền lợi và chính sách ưu đãi đặc biệt từ các công ty thành viên trong hệ sinh thái của Tập đoàn Việt Thắng.',
+    title: 'ƯU ĐÃI TỪ HỆ SINH THÁI VTGROUP',
+    desc: 'Trở thành một thành viên của VTGROUP, mỗi cá nhân được hưởng những quyền lợi và chính sách ưu đãi đặc biệt từ các công ty thành viên trong hệ sinh thái của Tập đoàn VTGROUP.',
     image: 'https://thuongtruong-fileserver.nvcms.net/IMAGES/2024/06/25/20240625102509-121.jpg',
   },
 ];
@@ -53,7 +53,7 @@ const RecruitmentPage = () => {
       </section>
       <section className="recruitment-section">
         <div className="recruitment-container">
-          <h2 className="recruitment-title">ỨNG TUYỂN VỚI VIỆT THẮNG</h2>
+          <h2 className="recruitment-title">ỨNG TUYỂN VỚI VTGROUP</h2>
 
           <div className="recruitment-grid">
             {recruitmentItems.map((item, index) => (

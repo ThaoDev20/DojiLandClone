@@ -4,15 +4,15 @@ import './HeroSection.css';
 const slides = [
   {
     image: 'https://drive.google.com/thumbnail?id=1GG7S2pJz92mjji_Jb4GMCGVCogx-Qmvq&sz=w1000',
-    alt: 'Việt Thắng Banner 1',
+    alt: 'VTGROUP Banner 1',
   },
   {
     image: 'https://i1-vnexpress.vnecdn.net/2026/05/07/A3-DN-1778120356-5188-1778120411.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=upHpQC54p0SwH2PLUDup7Q',
-    alt: 'Việt Thắng Banner 2',
+    alt: 'VTGROUP Banner 2',
   },
   {
     image: 'https://i1-vnexpress.vnecdn.net/2026/05/07/TPCT-1778119312-8368-1778119407.png?w=680&h=0&q=100&dpr=1&fit=crop&s=NjjMBz92kjjZ_7m117GUbg',
-    alt: 'Việt Thắng Banner 3',
+    alt: 'VTGROUP Banner 3',
   },
 ];
 
