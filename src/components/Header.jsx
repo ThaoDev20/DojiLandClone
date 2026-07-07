@@ -16,6 +16,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState({});
   const [isScrolled, setIsScrolled] = useState(false);
+  const [forceCloseDropdown, setForceCloseDropdown] = useState(false);
+  const [openDesktopDropdown, setOpenDesktopDropdown] = useState(null);
 
   const location = useLocation();
   const { projects } = useData();
@@ -78,15 +80,34 @@ const Header = () => {
   }, [isMenuOpen]);
 
   useEffect(() => {
+    const tabletQuery = window.matchMedia(
+      '(min-width: 821px) and (max-width: 1200px)'
+    );
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
+
+      // Trên tablet, scroll thì ép đóng dropdown
+      if (tabletQuery.matches) {
+        setOpenDesktopDropdown(null);
+        setForceCloseDropdown(true);
+      }
+    };
+
+    const allowDropdownAgain = () => {
+      setForceCloseDropdown(false);
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('pointerdown', allowDropdownAgain);
+    window.addEventListener('mousemove', allowDropdownAgain);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('pointerdown', allowDropdownAgain);
+      window.removeEventListener('mousemove', allowDropdownAgain);
     };
   }, []);
 
@@ -95,6 +116,7 @@ const Header = () => {
     setOpenSubmenu({});
   };
 
+
   const toggleSubmenu = (index) => {
     setOpenSubmenu((prev) => ({
       ...prev,
@@ -102,35 +124,88 @@ const Header = () => {
     }));
   };
 
+  const isTabletDesktopNav = () => {
+    return window.matchMedia('(min-width: 821px) and (max-width: 1200px)').matches;
+  };
+
+  const handleDesktopNavClick = (event, index, hasChildren) => {
+    if (hasChildren && isTabletDesktopNav()) {
+      event.preventDefault();
+
+      setForceCloseDropdown(false);
+      setOpenDesktopDropdown((prev) => (prev === index ? null : index));
+      return;
+    }
+
+    setOpenDesktopDropdown(null);
+    setForceCloseDropdown(true);
+  };
+
+  const handleDesktopChildClick = () => {
+    setOpenDesktopDropdown(null);
+    setForceCloseDropdown(true);
+  };
+
   return (
-    <header className={`header ${shouldUseScrolledStyle ? 'scrolled' : ''}`}>
+    <header
+      className={[
+        'header',
+        shouldUseScrolledStyle ? 'scrolled' : '',
+        forceCloseDropdown ? 'force-close-dropdown' : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
       <div className="header-desktop">
         <Link to="/" className="header-logo">
           <img src="/Logo1.png" alt="Logo" />
         </Link>
 
         <nav className="desktop-nav">
-          {menuItems.map((item, index) => (
-            <div key={index} className="desktop-nav-item">
-              <Link to={item.href} className="desktop-nav-link">
-                {item.label}
-              </Link>
+          {menuItems.map((item, index) => {
+            const hasChildren = item.children?.length > 0;
+            const isDropdownOpen = openDesktopDropdown === index;
 
-              {item.children && (
-                <div className="desktop-dropdown">
-                  {item.children.map((child, childIndex) => (
-                    <Link
-                      key={childIndex}
-                      to={child.href}
-                      className="desktop-dropdown-link"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+            return (
+              <div
+                key={index}
+                className={`desktop-nav-item ${isDropdownOpen ? 'dropdown-open' : ''}`}
+                onMouseEnter={() => {
+                  if (!isTabletDesktopNav()) {
+                    setForceCloseDropdown(false);
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (!isTabletDesktopNav()) {
+                    setOpenDesktopDropdown(null);
+                  }
+                }}
+              >
+                <Link
+                  to={item.href}
+                  className="desktop-nav-link"
+                  onClick={(event) => handleDesktopNavClick(event, index, hasChildren)}
+                >
+                  {item.label}
+                </Link>
+
+                {hasChildren && (
+                  <div className="desktop-dropdown">
+                    {item.children.map((child, childIndex) => (
+                      <Link
+                        key={childIndex}
+                        to={child.href}
+                        className="desktop-dropdown-link"
+                        onClick={handleDesktopChildClick}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         {visibleHighlightItems.length > 0 && (
